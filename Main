@@ -1,0 +1,116 @@
+package org.home.sjb;
+
+import java.awt.Color;
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Main {
+  public static void main(String[] args) {
+/*        Square[][] arr = new Square[6][4];
+        arr[0][0]=null;
+        arr[0][1]=new Square(1, Color.BLUE);
+        arr[0][2]=new Square(3, Color.RED);
+        arr[0][3]=new Square(1, Color.RED);
+        arr[1][0]=new Square(2, Color.BLUE);
+        arr[1][1]=new Square(1, Color.RED);
+        arr[1][2]=null;
+        arr[1][3]=new Square(1, Color.BLACK);
+        arr[2][0]=new Square(1, Color.RED);
+        arr[2][1]=new Square(1, Color.BLACK);
+        arr[2][2]=null;
+        arr[2][3]=new Square(1, Color.RED);
+        arr[3][0]=null;
+        arr[3][1]=null;
+        arr[3][2]=new Square(3, Color.RED);
+        arr[3][3]=new Square(1, Color.BLACK);
+        arr[4][0]=new Square(2, Color.BLUE);
+        arr[4][1]=null;
+        arr[4][2]=null;
+        arr[4][3]=new Square(2, Color.PINK);
+        arr[5][0]=new Square(4, Color.GREEN);
+        arr[5][1]=null;
+        arr[5][2]=null;
+        arr[5][3]=null;
+*/       
+       int[][] arr1 = new int[6][4];
+       arr1[0][1] = 1;
+       arr1[0][1] = 1;
+       arr1[0][2] = 3;
+       arr1[0][3] = 1;
+       arr1[1][0] = 2;
+       arr1[1][1] = 1;
+       arr1[1][3] = 1;
+       arr1[2][0] = 1;
+       arr1[2][1] = 1;
+       arr1[2][3] = 1;
+       arr1[3][2] = 3;
+       arr1[3][3] = 1;
+       arr1[4][0] = 2;
+       arr1[4][3] = 2;
+       arr1[5][0] = 4;
+       // find the permutations and then take the array
+       // ex. for arr1[0][2]
+       // 3 can be 1x3 or 3x1
+       // use 1 as height and 3 as width
+       // int i = 1; i++ somewhere
+       // whatever the row number is - the height + i 
+       // col - width + i
+
+       int height;
+       int width;
+//       Scanner sc = new Scanner(System.in);
+//       System.out.print("Enter a number: ");
+//       int number = sc.nextInt();
+//       int num = number;
+       //multiple(num);
+       
+       
+      /* int i = 1;
+       int j = 1;
+       for (int row = 0; row < arr.length; row++) {
+         for (int col = 0; col < arr[0].length; col++) {
+           if (arr[row][col].getNumber() > 0) {
+             if (i < num * 2) {
+               new Permutations(row - theHeight + i, col, height, width);
+               i++;
+             }
+             if (j < num * 2) {
+               new Permutations(row, col - thewidth + j, height, width);
+               j++;
+             }
+           }
+         }
+       }
+       */
+       //ArrayList<String> array = new ArrayList<>();
+       ArrayList<Multiples> array = new ArrayList<>();
+       int num = 6;
+       for (int i = 1; i <= num; i++){
+         if (num % i == 0){
+           height = i;
+           width = num / i;
+           array.add(new Multiples(height, width));
+           
+           //String mult = height + " x " + width;
+           //System.out.println(height + " x " + width);
+           //System.out.println();
+           //array.add(mult);
+       //do smth(put that combo into a arraylist of combos(width and height) go through all the multiples)
+        }
+       }
+       for(int i = 0; i < array.size(); i++) {
+         System.out.println("Height: " + array.get(i).getHeight() + " Width: " + array.get(i).getWidth());
+       }
+       ArrayList<Permutations> arr2 = new ArrayList<>();
+       for (int i = 0; i < array.size(); i++) {
+         for (int j = 0; j < array.get(i).getHeight(); j++) {
+           for (int k = 0; k < array.get(i).getWidth(); k++) {
+             arr2.add(new Permutations(j, k, array.get(i).getHeight(), array.get(i).getWidth()));
+           }
+         }
+       }
+       for(int i = 0; i < arr2.size(); i++) {
+         System.out.println("Height: " + arr2.get(i).getHeight() + " Width: " + array.get(i).getWidth() + "Vertical Offset: " + arr2.get(i).getVO() + "Horizontal Offset: " + arr2.get(i).getHO());
+       }
+    }
+}
