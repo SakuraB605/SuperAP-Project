@@ -1,4 +1,4 @@
-package org.home.sjb;
+package home.sj;
 
 import java.util.ArrayList;
 
@@ -37,4 +37,4 @@ public class Multiples {
       System.out.println("Height: " + array.get(i).getHeight() + " Width: " + array.get(i).getWidth());
     }
   }
-}
+} 
