@@ -1,5 +1,7 @@
 package org.home.sjb;
 
+package home.sj;
+
 import java.awt.Color;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -58,10 +60,10 @@ public class Main {
 
        int height;
        int width;
-//       Scanner sc = new Scanner(System.in);
-//       System.out.print("Enter a number: ");
-//       int number = sc.nextInt();
-//       int num = number;
+       Scanner sc = new Scanner(System.in);
+       System.out.print("Enter a number: ");
+       int number = sc.nextInt();
+       int num = number;
        //multiple(num);
        
        
@@ -84,7 +86,7 @@ public class Main {
        */
        //ArrayList<String> array = new ArrayList<>();
        ArrayList<Multiples> array = new ArrayList<>();
-       int num = 6;
+//       int num = 6;
        for (int i = 1; i <= num; i++){
          if (num % i == 0){
            height = i;
@@ -110,7 +112,7 @@ public class Main {
          }
        }
        for(int i = 0; i < arr2.size(); i++) {
-         System.out.println("Height: " + arr2.get(i).getHeight() + " Width: " + arr2.get(i).getWidth() + "Vertical Offset: " + arr2.get(i).getVO() + "Horizontal Offset: " + arr2.get(i).getHO());
+         System.out.println("Height: " + arr2.get(i).getHeight() + " Width: " + arr2.get(i).getWidth() + " Vertical Offset: " + arr2.get(i).getVO() + " Horizontal Offset: " + arr2.get(i).getHO());
        }
     }
 }
