@@ -1,0 +1,17 @@
+package org.home.sjb;
+
+import java.awt.Color;
+
+public class Square {
+  int num;
+  Color color;
+  
+//  Square(int number, Color color){
+//    num = number;
+//    this.color = color;
+//  }
+
+  public int getNumber() {
+    return num; 
+  }
+}
