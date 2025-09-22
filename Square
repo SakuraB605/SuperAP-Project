@@ -1,4 +1,4 @@
-package org.home.sjb;
+package home.sj;
 
 import java.awt.Color;
 
@@ -10,6 +10,9 @@ public class Square {
 //    num = number;
 //    this.color = color;
 //  }
+  Square(int number){
+    num = number;
+  }
 
   public int getNumber() {
     return num; 
