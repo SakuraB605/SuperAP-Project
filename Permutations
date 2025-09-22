@@ -1,11 +1,10 @@
-package org.home.sjb;
+package home.sj;
 
 public class Permutations {
   int verticalShift;
   int horizontalShift;
   int height;
   int width;
-  ;
   
   Permutations(int vert , int hor, int height, int width){
     verticalShift = vert;
