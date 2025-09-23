@@ -16,25 +16,13 @@ public class Multiples {
   public int getWidth() {
     return width;
   }
-  public void multiple(int num) {
-    int height;
-    int width;
-    ArrayList<Multiples> array = new ArrayList<>();
-    for (int i = 1; i <= num; i++){
-      if (num % i == 0){
-        height = i;
-        width = num / i;
-        array.add(new Multiples(height, width));
-        
-        //String mult = height + " x " + width;
-        //System.out.println(height + " x " + width);
-        //System.out.println();
-        //array.add(mult);
-    //do smth(put that combo into a arraylist of combos(width and height) go through all the multiples)
-     }
-    }
-    for(int i = 0; i < array.size(); i++) {
-      System.out.println("Height: " + array.get(i).getHeight() + " Width: " + array.get(i).getWidth());
-    }
-  }
+  public static ArrayList<Multiples> getMultiples(int num) {
+	  ArrayList<Multiples> result = new ArrayList<>();
+	  for (int i = 1; i <= num; i++) {
+	    if (num % i == 0) {
+	      result.add(new Multiples(i, num / i));
+	    }
+	  }
+	  return result;
+	}
 } 
