@@ -1,6 +1,6 @@
 package home.sj;
 
-import java.awt.Color;
+//import java.awt.Color;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -80,16 +80,7 @@ public class Main {
        // use 1 as height and 3 as width
        // int i = 1; i++ somewhere
        // whatever the row number is - the height + i 
-       // col - width + i
-
-       int height;
-       int width;
-       Scanner sc = new Scanner(System.in);
-       System.out.print("Enter a number: ");
-       int number = sc.nextInt();
-       int num = number;
-       //multiple(num);
-       
+       // col - width + i       
        
 /*      int clueNumber; 
  		for (int row = 0; row < arr.length; row++) {
@@ -122,22 +113,14 @@ public class Main {
          }
        }
        */
-       //ArrayList<String> array = new ArrayList<>();
+       
+       Scanner sc = new Scanner(System.in);
+       System.out.print("Enter a number: ");
+       int number = sc.nextInt();
+       int num = number;
+       
        ArrayList<Multiples> array = new ArrayList<>();
-//       int num = 6;
-       for (int i = 1; i <= num; i++){
-         if (num % i == 0){
-           height = i;
-           width = num / i;
-           array.add(new Multiples(height, width));
-           
-           //String mult = height + " x " + width;
-           //System.out.println(height + " x " + width);
-           //System.out.println();
-           //array.add(mult);
-       //do smth(put that combo into a arraylist of combos(width and height) go through all the multiples)
-        }
-       }
+       array = Multiples.getMultiples(num); 
        for(int i = 0; i < array.size(); i++) {
          System.out.println("Height: " + array.get(i).getHeight() + " Width: " + array.get(i).getWidth());
        }
