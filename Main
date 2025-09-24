@@ -120,6 +120,7 @@ public class Main {
              for(int i = 0; i < arr2.size(); i++) {
                System.out.println("Height: " + arr2.get(i).getHeight() + " Width: " + arr2.get(i).getWidth() + " Vertical Offset: " + arr2.get(i).getVO() + " Horizontal Offset: " + arr2.get(i).getHO());
              }
+			 System.out.println("--------------------------------------------------------------");
              arr2.clear();
            }
          }
