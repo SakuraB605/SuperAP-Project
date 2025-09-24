@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 public class Main {
   public static void main(String[] args) {
-/*        Square[][] arr = new Square[6][4];
+/*      Square[][] arr = new Square[6][4];
         arr[0][0]=null;
         arr[0][1]=new Square(1, Color.BLUE);
         arr[0][2]=new Square(3, Color.RED);
@@ -58,7 +58,7 @@ public class Main {
       arr[5][2]=null;
       arr[5][3]=null;
       
-       int[][] arr1 = new int[6][4];
+/*       int[][] arr1 = new int[6][4];
        arr1[0][1] = 1;
        arr1[0][1] = 1;
        arr1[0][2] = 3;
@@ -74,6 +74,7 @@ public class Main {
        arr1[4][0] = 2;
        arr1[4][3] = 2;
        arr1[5][0] = 4;
+*/
        // find the permutations and then take the array
        // ex. for arr1[0][2]
        // 3 can be 1x3 or 3x1
@@ -96,30 +97,40 @@ public class Main {
 */              
        
        
-      /* int i = 1;
-       int j = 1;
+      ArrayList<Permutations> arr2 = new ArrayList<>();
+      ArrayList<Permutations> arr3 = new ArrayList<>();
+      ArrayList<Multiples> array = new ArrayList<>();
+      
        for (int row = 0; row < arr.length; row++) {
          for (int col = 0; col < arr[0].length; col++) {
-           if (arr[row][col].getNumber() > 0) {
-             if (i < num * 2) {
-               new Permutations(row - theHeight + i, col, height, width);
-               i++;
+           if (arr[row][col] != null) {
+        	 int num = arr[row][col].getNumber();
+             array = Multiples.getMultiples(num);
+             for(int i = 0; i < array.size(); i++) {
+               System.out.println("Height: " + array.get(i).getHeight() + " Width: " + array.get(i).getWidth());
              }
-             if (j < num * 2) {
-               new Permutations(row, col - thewidth + j, height, width);
-               j++;
+             for (int i = 0; i < array.size(); i++) {
+               for (int j = 0; j < array.get(i).getHeight(); j++) {
+                 for (int k = 0; k < array.get(i).getWidth(); k++) {
+                   arr2.add(new Permutations(j, k, array.get(i).getHeight(), array.get(i).getWidth()));
+                   arr3.add(new Permutations(j, k, array.get(i).getHeight(), array.get(i).getWidth()));
+                 }
+               }
              }
+             for(int i = 0; i < arr2.size(); i++) {
+               System.out.println("Height: " + arr2.get(i).getHeight() + " Width: " + arr2.get(i).getWidth() + " Vertical Offset: " + arr2.get(i).getVO() + " Horizontal Offset: " + arr2.get(i).getHO());
+             }
+             arr2.clear();
            }
          }
        }
-       */
        
-       Scanner sc = new Scanner(System.in);
-       System.out.print("Enter a number: ");
-       int number = sc.nextInt();
-       int num = number;
+       //Scanner sc = new Scanner(System.in);
+       //System.out.print("Enter a number: ");
+       //int number = sc.nextInt();
+       //int num = number;
        
-       ArrayList<Multiples> array = new ArrayList<>();
+/*       ArrayList<Multiples> array = new ArrayList<>();
        array = Multiples.getMultiples(num); 
        for(int i = 0; i < array.size(); i++) {
          System.out.println("Height: " + array.get(i).getHeight() + " Width: " + array.get(i).getWidth());
@@ -135,5 +146,6 @@ public class Main {
        for(int i = 0; i < arr2.size(); i++) {
          System.out.println("Height: " + arr2.get(i).getHeight() + " Width: " + arr2.get(i).getWidth() + " Vertical Offset: " + arr2.get(i).getVO() + " Horizontal Offset: " + arr2.get(i).getHO());
        }
+*/       
     }
 }
