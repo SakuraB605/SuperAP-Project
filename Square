@@ -1,19 +1,22 @@
 package home.sj;
 
 import java.awt.Color;
+import java.util.ArrayList;
 
 public class Square {
   int num;
   Color color;
+  ArrayList<Permutations> arr = new ArrayList<>();
   
-//  Square(int number, Color color){
-//    num = number;
-//    this.color = color;
-//  }
-  Square(int number){
+/*Square(int number, Color color){
     num = number;
+    this.color = color;
   }
-
+*/
+  Square(int number, ArrayList<Permutations> array){
+    num = number;
+    arr = array;
+  }
   public int getNumber() {
     return num; 
   }
