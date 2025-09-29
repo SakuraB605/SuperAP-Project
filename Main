@@ -58,6 +58,19 @@ public class Main {
       arr[5][2]= null;
       arr[5][3]= null;
       
+      for (int row = 0; row < arr.length; row++) {
+    	  for (int col = 0; col < arr[0].length; col++) {
+    		  if(arr[row][col] == null) {
+    			  System.out.print(" x ");
+    		  }
+    		  if(arr[row][col] != null) {
+    			  System.out.print(" " + arr[row][col].getNumber() + " ");
+    		  }
+    	  }
+    	  System.out.println();
+      }
+      System.out.println();
+      
 /*       int[][] arr1 = new int[6][4];
        arr1[0][1] = 1;
        arr1[0][1] = 1;
@@ -75,13 +88,13 @@ public class Main {
        arr1[4][3] = 2;
        arr1[5][0] = 4;
 */
-       // find the permutations and then take the array
-       // ex. for arr1[0][2]
-       // 3 can be 1x3 or 3x1
-       // use 1 as height and 3 as width
-       // int i = 1; i++ somewhere
-       // whatever the row number is - the height + i 
-       // col - width + i       
+/*        find the permutations and then take the array
+        ex. for arr1[0][2]
+        3 can be 1x3 or 3x1
+        use 1 as height and 3 as width
+        int i = 1; i++ somewhere
+        whatever the row number is - the height + i 
+        col - width + i       
        
 /*      int clueNumber; 
  		for (int row = 0; row < arr.length; row++) {
@@ -112,9 +125,9 @@ public class Main {
              for (int i = 0; i < array.size(); i++) {
                for (int j = 0; j < array.get(i).getHeight(); j++) {
                  for (int k = 0; k < array.get(i).getWidth(); k++) {
-                   arr2.add(new Permutations(j, k, array.get(i).getHeight(), array.get(i).getWidth()));
+                   arr2.add(new Permutations(row + j, col - k, array.get(i).getHeight(), array.get(i).getWidth()));
                    arr[row][col] = new Square(arr[row][col].getNumber(), arr2);
-                   arr3.add(new Permutations(j, k, array.get(i).getHeight(), array.get(i).getWidth()));
+                   arr3.add(new Permutations(row + j, col - k, array.get(i).getHeight(), array.get(i).getWidth()));
                  }
                }
              }
@@ -126,6 +139,15 @@ public class Main {
              arr2.clear();
            }
          }
+       }
+       for (int r = 0; r < arr.length; r++) {
+    	   for(int c = 0; c < arr[0].length; c++) {
+    		   if(arr[r][c].getNumber() < 1) {
+     			  for(Permutations pemutation : arr3) {
+     				  
+     			  }
+     		  }
+    	   }
        }
        
        //Scanner sc = new Scanner(System.in);
