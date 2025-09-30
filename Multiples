@@ -17,12 +17,12 @@ public class Multiples {
     return width;
   }
   public static ArrayList<Multiples> getMultiples(int num) {
-	  ArrayList<Multiples> result = new ArrayList<>();
-	  for (int i = 1; i <= num; i++) {
-	    if (num % i == 0) {
-	      result.add(new Multiples(i, num / i));
-	    }
-	  }
-	  return result;
-	}
+    ArrayList<Multiples> result = new ArrayList<>();
+    for (int i = 1; i <= num; i++) {
+      if (num % i == 0) {
+        result.add(new Multiples(i, num / i));
+      }
+    }
+    return result;
+  }
 } 
