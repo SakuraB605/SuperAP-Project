@@ -1,4 +1,4 @@
-package org.home.sjb;
+package home.sjb;
 
 //import java.awt.Color;
 import java.util.ArrayList;
