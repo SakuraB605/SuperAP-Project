@@ -20,4 +20,7 @@ public class Square {
   public int getNumber() {
     return num; 
   }
+  public ArrayList<Permutations> getArrayList() {
+    return arr;
+  }
 }
