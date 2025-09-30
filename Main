@@ -1,4 +1,4 @@
-package home.sj;
+package org.home.sjb;
 
 //import java.awt.Color;
 import java.util.ArrayList;
@@ -140,15 +140,79 @@ public class Main {
            }
          }
        }
-       for (int r = 0; r < arr.length; r++) {
+       System.out.println("THIS IS THE END");
+       System.out.println();
+       
+       for (int row = 0; row < arr.length; row++) {
+         for (int col = 0; col < arr[0].length; col++) {
+           if(arr[row][col] == null) {
+             System.out.print(" x ");
+           }
+           if(arr[row][col] != null) {
+             System.out.print(" " + arr[row][col].getNumber() + " ");
+           }
+         }
+         System.out.println();
+       }
+       System.out.println();
+       ArrayList<Permutations> arr4 = new ArrayList<>();
+       ArrayList<Permutations> arr5 = new ArrayList<>();
+       ArrayList<Multiples> array1 = new ArrayList<>();
+       
+        for (int row = 0; row < arr.length; row++) {
+          for (int col = 0; col < arr[0].length; col++) {
+            if (arr[row][col] != null) {
+            int num = arr[row][col].getNumber();
+              array1 = Multiples.getMultiples(num);
+              for(int i = 0; i < array1.size(); i++) {
+                System.out.println("Height: " + array1.get(i).getHeight() + " Width: " + array1.get(i).getWidth());
+              }
+              for (int i = 0; i < array1.size(); i++) {
+                for (int j = 0; j < array1.get(i).getHeight(); j++) {
+                  for (int k = 0; k < array1.get(i).getWidth(); k++) {
+                    if(row + j > -1 && col - k > -1) {
+                      arr4.add(new Permutations(row + j, col - k, array1.get(i).getHeight(), array1.get(i).getWidth()));
+                      arr[row][col] = new Square(arr[row][col].getNumber(), arr4);
+                    }
+                    arr5.add(new Permutations(row + j, col - k, array1.get(i).getHeight(), array1.get(i).getWidth()));
+                  }
+                }
+              }
+              for(int i = 0; i < arr4.size(); i++) {
+                System.out.println("Height: " + arr4.get(i).getHeight() + " Width: " + arr4.get(i).getWidth() + " Vertical Offset: " + arr4.get(i).getVO() + " Horizontal Offset: " + arr4.get(i).getHO());
+                
+              }
+              System.out.println("--------------------------------------------------------------");
+              arr4.clear();
+            }
+          }
+        }
+       
+/*       for (int r = 0; r < arr.length; r++) {
     	   for(int c = 0; c < arr[0].length; c++) {
-    		   if(arr[r][c].getNumber() < 1) {
-     			  for(Permutations pemutation : arr3) {
-     				  
-     			  }
-     		  }
+    		   if(arr[r][c] != null && arr[r][c].getNumber() < 1) {
+     			   for(Permutations p : arr[r][c].getArrayList()) {
+     				   if(p.getVO() == -1 || p.getHO() == -1) {
+     				     arr[r][c].getArrayList().remove(p);
+     				     arr[r][c] = new Square(arr[r][c].getNumber(), arr[r][c].getArrayList());
+     				   }
+     			   }
+     		   }
     	   }
        }
+       ArrayList<Permutations> list = null;
+       for (int r = 0; r < arr.length; r++) {
+         for(int c = 0; c < arr[0].length; c++) {
+           if(arr[r][c] != null) {
+             list = arr[r][c].getArrayList();
+             for (int i = 0; i < list.size(); i++) {
+               System.out.println("Height: " + list.get(i).getHeight() + " Width: " + list.get(i).getWidth() + " Vertical Offset: " + list.get(i).getVO() + " Horizontal Offset: " + list.get(i).getHO());
+             }
+           }
+           //System.out.println("--------------------------------------------------------------");
+         }
+       }
+*/       
        
        //Scanner sc = new Scanner(System.in);
        //System.out.print("Enter a number: ");
