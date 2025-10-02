@@ -115,25 +115,21 @@ public class Main extends JPanel {
                 for (int j = 0; j < array1.get(i).getHeight(); j++) {
                   for (int k = 0; k < array1.get(i).getWidth(); k++) {
                     if(row + j > -1 && col - k > -1 && row - j > -1 && col + k > -1) {
-                    	if (arr[row ][col] != null) {
-                    		arr4.add(new Permutations(row + j, col - k, array1.get(i).getHeight(), array1.get(i).getWidth()));
-                            arr[row][col] = new Square(arr[row][col].getNumber(), arr4);
-                    	}
-                    }
+                      arr4.add(new Permutations(row + j, col - k, array1.get(i).getHeight(), array1.get(i).getWidth()));
+                      arr[row][col] = new Square(arr[row][col].getNumber(), arr4);
+                    } 
                     arr5.add(new Permutations(row + j, col - k, array1.get(i).getHeight(), array1.get(i).getWidth()));
                   }
                 }
               }
-              for(int i = 0; i < arr4.size(); i++) {
-                System.out.println("Height: " + arr4.get(i).getHeight() + " Width: " + arr4.get(i).getWidth() + " Vertical Offset: " + arr4.get(i).getVO() + " Horizontal Offset: " + arr4.get(i).getHO());
-                
+              for(int x = 0; x < arr4.size(); x++) {
+                System.out.println("Height: " + arr4.get(x).getHeight() + " Width: " + arr4.get(x).getWidth() + " Vertical Offset: " + arr4.get(x).getVO() + " Horizontal Offset: " + arr4.get(x).getHO());
               }
               System.out.println("--------------------------------------------------------------");
               arr4.clear();
             }
           }
         }
-        
         
 /*      Square[][] arr = new Square[6][4];
         arr[0][0]=null;
