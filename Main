@@ -1,4 +1,4 @@
-package home.sj;
+package org.home.sjb;
 
 //import java.awt.Color;
 import java.util.ArrayList;
@@ -10,12 +10,12 @@ import javax.swing.JPanel;
 
 public class Main extends JPanel {
   public static void main(String[] args) {
-//	  JFrame window = new JFrame();
+//    JFrame window = new JFrame();
 //      window.setExtendedState(JFrame.MAXIMIZED_BOTH);;
 //      window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 //      window.setVisible(true);
       
-	  Square[][] arr = new Square[6][4];
+    Square[][] arr = new Square[6][4];
       arr[0][0]= null;
       arr[0][1]= new Square(1, null);
       arr[0][2]= new Square(3, null);
@@ -42,15 +42,15 @@ public class Main extends JPanel {
       arr[5][3]= null;
       
       for (int row = 0; row < arr.length; row++) {
-    	  for (int col = 0; col < arr[0].length; col++) {
-    		  if(arr[row][col] == null) {
-    			  System.out.print(" x ");
-    		  }
-    		  if(arr[row][col] != null) {
-    			  System.out.print(" " + arr[row][col].getNumber() + " ");
-    		  }
-    	  }
-    	  System.out.println();
+        for (int col = 0; col < arr[0].length; col++) {
+          if(arr[row][col] == null) {
+            System.out.print(" x ");
+          }
+          if(arr[row][col] != null) {
+            System.out.print(" " + arr[row][col].getNumber() + " ");
+          }
+        }
+        System.out.println();
       }
       System.out.println();
       
@@ -61,17 +61,19 @@ public class Main extends JPanel {
        for (int row = 0; row < arr.length; row++) {
          for (int col = 0; col < arr[0].length; col++) {
            if (arr[row][col] != null) {
-        	 int num = arr[row][col].getNumber();
+           int num = arr[row][col].getNumber();
              array = Multiples.getMultiples(num);
              for(int i = 0; i < array.size(); i++) {
                System.out.println("Height: " + array.get(i).getHeight() + " Width: " + array.get(i).getWidth());
              }
              for (int i = 0; i < array.size(); i++) {
-               for (int j = 0; j < array.get(i).getHeight(); j++) {
-                 for (int k = 0; k < array.get(i).getWidth(); k++) {
-                   arr2.add(new Permutations(row + j, col - k, array.get(i).getHeight(), array.get(i).getWidth()));
+               int height = array.get(i).getHeight();
+               int width = array.get(i).getWidth();
+               for (int j = 0; j < height; j++) {
+                 for (int k = 0; k < width; k++) {
+                   arr2.add(new Permutations(row + j, col - k, height, width));
                    arr[row][col] = new Square(arr[row][col].getNumber(), arr2);
-                   arr3.add(new Permutations(row + j, col - k, array.get(i).getHeight(), array.get(i).getWidth()));
+                   arr3.add(new Permutations(row + j, col - k, height, width));
                  }
                }
              }
@@ -112,13 +114,15 @@ public class Main extends JPanel {
                 System.out.println("Height: " + array1.get(i).getHeight() + " Width: " + array1.get(i).getWidth());
               }
               for (int i = 0; i < array1.size(); i++) {
-                for (int j = 0; j < array1.get(i).getHeight(); j++) {
-                  for (int k = 0; k < array1.get(i).getWidth(); k++) {
+                int height = array1.get(i).getHeight();
+                int width = array1.get(i).getWidth();
+                for (int j = 0; j < height; j++) {
+                  for (int k = 0; k < width; k++) {
                     if(row + j > -1 && col - k > -1 && row - j > -1 && col + k > -1) {
-                      arr4.add(new Permutations(row + j, col - k, array1.get(i).getHeight(), array1.get(i).getWidth()));
+                      arr4.add(new Permutations(row + j, col - k, height, width));
                       arr[row][col] = new Square(arr[row][col].getNumber(), arr4);
                     } 
-                    arr5.add(new Permutations(row + j, col - k, array1.get(i).getHeight(), array1.get(i).getWidth()));
+                    arr5.add(new Permutations(row + j, col - k, height, width));
                   }
                 }
               }
@@ -130,6 +134,7 @@ public class Main extends JPanel {
             }
           }
         }
+        
         
 /*      Square[][] arr = new Square[6][4];
         arr[0][0]=null;
@@ -183,28 +188,28 @@ public class Main extends JPanel {
         col - width + i       
        
 /*      int clueNumber; 
- 		for (int row = 0; row < arr.length; row++) {
-    	   for (int col = 0; col < arr[0].length; col++) {
-    		   Square clue = arr[row][col];
-    		   if (clue != null) {
-    	    	    clueNumber = clue.getNumber();
-    	    	    // generate multiples and permutations for this clue
-    	       }
-    	   }
+    for (int row = 0; row < arr.length; row++) {
+         for (int col = 0; col < arr[0].length; col++) {
+           Square clue = arr[row][col];
+           if (clue != null) {
+                clueNumber = clue.getNumber();
+                // generate multiples and permutations for this clue
+             }
+         }
        }
        put clueNumber into the loop that is getting the permutation for num
 */                            
 /*     for (int r = 0; r < arr.length; r++) {
-    	 for(int c = 0; c < arr[0].length; c++) {
-    		 if(arr[r][c] != null && arr[r][c].getNumber() < 1) {
-     			for(Permutations p : arr[r][c].getArrayList()) {
-     			  if(p.getVO() == -1 || p.getHO() == -1) {
-     				 arr[r][c].getArrayList().remove(p);
-     				 arr[r][c] = new Square(arr[r][c].getNumber(), arr[r][c].getArrayList());
-     			  }
-     			}
-     		 }
-    	  }
+       for(int c = 0; c < arr[0].length; c++) {
+         if(arr[r][c] != null && arr[r][c].getNumber() < 1) {
+          for(Permutations p : arr[r][c].getArrayList()) {
+            if(p.getVO() == -1 || p.getHO() == -1) {
+             arr[r][c].getArrayList().remove(p);
+             arr[r][c] = new Square(arr[r][c].getNumber(), arr[r][c].getArrayList());
+            }
+          }
+         }
+        }
        }
        ArrayList<Permutations> list = null;
        for (int r = 0; r < arr.length; r++) {
