@@ -25,4 +25,4 @@ public class Multiples {
     }
     return result;
   }
-} 
+}
