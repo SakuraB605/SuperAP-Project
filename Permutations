@@ -24,4 +24,8 @@ public class Permutations {
   public int getHO() {
     return horizontalShift;
   }
+  
+  public String toString() {
+    return "H: " + height + ", W: " + width + ", Vert: " + verticalShift + ", Horz: " + horizontalShift;
+  }
 }
