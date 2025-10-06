@@ -1,4 +1,4 @@
-package org.home.sjb;
+package home.sjb;
 
 //import java.awt.Color;
 import java.util.ArrayList;
@@ -58,7 +58,76 @@ public class Main extends JPanel {
       ArrayList<Permutations> arr3 = new ArrayList<>();
       ArrayList<Multiples> array = new ArrayList<>();
       
-       for (int row = 0; row < arr.length; row++) {
+      for (int row = 0; row < arr.length; row++) {
+        for (int col = 0; col < arr[0].length; col++) {
+          if (arr[row][col] != null) {
+          int num = arr[row][col].getNumber();
+            array = Multiples.getMultiples(num);
+            for(int i = 0; i < array.size(); i++) {
+              System.out.println("Height: " + array.get(i).getHeight() + " Width: " + array.get(i).getWidth());
+            }
+            for (int i = 0; i < array.size(); i++) {
+              int height = array.get(i).getHeight();
+              int width = array.get(i).getWidth();
+              for (int j = 0; j < height; j++) {
+                for (int k = 0; k < width; k++) {
+                  if(row + j - height + 1 >= 0 && row + j < arr.length && col + k - width + 1 >= 0 && col + k < arr[0].length) {
+                    arr2.add(new Permutations(j, k, height, width));
+                    arr[row][col] = new Square(arr[row][col].getNumber(), arr2);
+                  }
+                  
+                  arr3.add(new Permutations(j, k, height, width));
+                }
+              }
+            }
+            for(int i = 0; i < arr2.size(); i++) {
+              System.out.println("Height: " + arr2.get(i).getHeight() + " Width: " + arr2.get(i).getWidth() + " Vertical Offset: " + arr2.get(i).getVO() + " Horizontal Offset: " + arr2.get(i).getHO());
+            }
+            System.out.println("--------------------------------------------------------------");
+            arr2.clear();
+          }
+        }
+      }
+      System.out.println("THIS IS THE END");
+      System.out.println();
+      
+      int reachCount = 1;
+      for (int row = 0; row < arr.length; row++) {
+        for (int col = 0; col < arr[0].length; col++) {
+          if (arr[row][col] != null) {
+            ArrayList<Permutations> perm = arr[row][col].getArrayList();
+//            System.out.println(perm);
+            for (int i = 0; i < perm.size(); i++) {
+              if (perm.size() > 1) {
+                int height = perm.get(i).getHeight();
+                int width = perm.get(i).getWidth();
+                int verOff = perm.get(i).getVO();
+                int horOff = perm.get(i).getHO();
+//                for (int y = 0; y < perm.size(); y++) {
+                System.out.println("reached: " + reachCount++);                        
+                  for (int j = row + verOff - height + 1; j <= row + verOff; j++) {
+                    for (int k = col + horOff - width + 1; k <= col + horOff; k++) {
+                      if(arr[j][k] != null && !(row == j && col == k)) {
+                        perm.remove(i);
+                        arr[row][col] = new Square(arr[row][col].getNumber(), perm);
+                        i--;
+                        j = row + verOff + 1;
+                        break;
+                      } else {
+                        
+                      }
+                    }
+                  }
+                  System.out.println("Height: " + height + " Width: " + width + " Vertical Offset: " + verOff + " Horizontal Offset: " + horOff);
+//                }
+              }
+            System.out.println("--------------------------------------------------------------");
+           }
+          }
+        }
+      }
+      
+/*       for (int row = 0; row < arr.length; row++) {
          for (int col = 0; col < arr[0].length; col++) {
            if (arr[row][col] != null) {
            int num = arr[row][col].getNumber();
@@ -134,8 +203,7 @@ public class Main extends JPanel {
             }
           }
         }
-        
-        
+*/        
 /*      Square[][] arr = new Square[6][4];
         arr[0][0]=null;
         arr[0][1]=new Square(1, Color.BLUE);
