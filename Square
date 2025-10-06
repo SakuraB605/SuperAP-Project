@@ -6,7 +6,7 @@ import java.util.ArrayList;
 public class Square {
   int num;
   Color color;
-  ArrayList<Permutations> arr = new ArrayList<>();
+  ArrayList<Permutations> arr;
   
 /*Square(int number, Color color){
     num = number;
@@ -14,8 +14,13 @@ public class Square {
   }
 */
   Square(int number, ArrayList<Permutations> array){
+    arr = new ArrayList<Permutations>();
     num = number;
-    arr = array;
+    if (array != null) {      
+      for (int i = 0; i < array.size(); i++) {
+        arr.add(array.get(i));
+      }
+    }
   }
   public int getNumber() {
     return num; 
