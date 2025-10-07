@@ -7,13 +7,14 @@ public class Square {
   int num;
   Color color;
   ArrayList<Permutations> arr;
+  boolean isLocked;
   
 /*Square(int number, Color color){
     num = number;
     this.color = color;
   }
 */
-  Square(int number, ArrayList<Permutations> array){
+  Square(int number, ArrayList<Permutations> array, boolean isLocked){  
     arr = new ArrayList<Permutations>();
     num = number;
     if (array != null) {      
@@ -21,7 +22,13 @@ public class Square {
         arr.add(array.get(i));
       }
     }
+    isLocked = false;
   }
+  Square(boolean isLocked){  
+	    arr = null;
+//	    num = null;
+	    isLocked = false;
+	  }
   public int getNumber() {
     return num; 
   }
