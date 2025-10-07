@@ -98,12 +98,13 @@ public class Main extends JPanel {
             ArrayList<Permutations> perm = arr[row][col].getArrayList();
 //            System.out.println(perm);
             for (int i = 0; i < perm.size(); i++) {
-              int height = perm.get(i).getHeight();
-              int width = perm.get(i).getWidth();
-              int verOff = perm.get(i).getVO();
-              int horOff = perm.get(i).getHO();
               if (perm.size() > 1) {
-                System.out.println("reached: " + reachCount++);                        
+                int height = perm.get(i).getHeight();
+                int width = perm.get(i).getWidth();
+                int verOff = perm.get(i).getVO();
+                int horOff = perm.get(i).getHO();
+//                for (int y = 0; y < perm.size(); y++) {
+//                System.out.println("reached: " + reachCount++);                        
                   for (int j = row + verOff - height + 1; j <= row + verOff; j++) {
                     for (int k = col + horOff - width + 1; k <= col + horOff; k++) {
                       if(arr[j][k] != null && !(row == j && col == k)) {
@@ -112,13 +113,16 @@ public class Main extends JPanel {
                         i--;
                         j = row + verOff + 1;
                         break;
+                      } else {
+                        
                       }
                     }
                   }
-                  System.out.println("Height: " + height + " Width: " + width + " Vertical Offset: " + verOff + " Horizontal Offset: " + horOff);
+//                }
               }
-              System.out.println("--------------------------------------------------------------");
            }
+            System.out.println(perm);
+            System.out.println("--------------------------------------------------------------");
           }
         }
       }
