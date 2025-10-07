@@ -16,30 +16,30 @@ public class Main extends JPanel {
 //      window.setVisible(true);
       
     Square[][] arr = new Square[6][4];
-      arr[0][0]= null;
+      arr[0][0]= new Square(false);
       arr[0][1]= new Square(1, null, false);
       arr[0][2]= new Square(3, null, false);
       arr[0][3]= new Square(1, null, false);
       arr[1][0]= new Square(2, null, false);
       arr[1][1]= new Square(1, null, false);
-      arr[1][2]= null;
+      arr[1][2]= new Square(false);
       arr[1][3]= new Square(1, null, false);
       arr[2][0]= new Square(1, null, false);
       arr[2][1]= new Square(1, null, false);
-      arr[2][2]= null;
+      arr[2][2]= new Square(false);
       arr[2][3]= new Square(1, null, false);
-      arr[3][0]= null;
-      arr[3][1]= null;
+      arr[3][0]= new Square(false);
+      arr[3][1]= new Square(false);
       arr[3][2]= new Square(3, null, false);
       arr[3][3]= new Square(1, null, false);
       arr[4][0]= new Square(2, null, false);
-      arr[4][1]= null;
-      arr[4][2]= null;
+      arr[4][1]= new Square(false);
+      arr[4][2]= new Square(false);
       arr[4][3]= new Square(2, null, false);
       arr[5][0]= new Square(4, null, false);
-      arr[5][1]= null;
-      arr[5][2]= null;
-      arr[5][3]= null;
+      arr[5][1]= new Square(false);
+      arr[5][2]= new Square(false);
+      arr[5][3]= new Square(false);
       
       for (int row = 0; row < arr.length; row++) {
         for (int col = 0; col < arr[0].length; col++) {
@@ -73,7 +73,7 @@ public class Main extends JPanel {
                 for (int k = 0; k < width; k++) {
                   if(row + j - height + 1 >= 0 && row + j < arr.length && col + k - width + 1 >= 0 && col + k < arr[0].length) {
                     arr2.add(new Permutations(j, k, height, width));
-                    arr[row][col] = new Square(arr[row][col].getNumber(), arr2);
+                    arr[row][col] = new Square(arr[row][col].getNumber(), arr2, false);
                   }
                   
                   arr3.add(new Permutations(j, k, height, width));
@@ -105,7 +105,7 @@ public class Main extends JPanel {
                     for (int k = col + horOff - width + 1; k <= col + horOff; k++) {
                       if(arr[j][k] != null && !(row == j && col == k)) {
                         perm.remove(i);
-                        arr[row][col] = new Square(arr[row][col].getNumber(), perm);
+                        arr[row][col] = new Square(arr[row][col].getNumber(), perm, false);
                         i--;
                         j = row + verOff + 1;
                         break;
