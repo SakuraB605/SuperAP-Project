@@ -1,31 +1,31 @@
 package home.sj;
 
 public class Permutations {
-  int verticalShift;
-  int horizontalShift;
-  int height;
-  int width;
-  
-  Permutations(int vert , int hor, int height, int width){
-    verticalShift = vert;
-    horizontalShift = hor;
-    this.height = height;
-    this.width = width;
-  }
-  public int getHeight() {
-    return height;
-  }
-  public int getWidth() {
-    return width;
-  }
-  public int getVO() {
-    return verticalShift;
-  }
-  public int getHO() {
-    return horizontalShift;
-  }
-  
-  public String toString() {
-    return "H: " + height + ", W: " + width + ", Vert: " + verticalShift + ", Horz: " + horizontalShift;
-  }
-}
+	  int verticalShift;
+	  int horizontalShift;
+	  int height;
+	  int width;
+	  
+	  Permutations(int vert , int hor, int height, int width){
+	    verticalShift = vert;
+	    horizontalShift = hor;
+	    this.height = height;
+	    this.width = width;
+	  }
+	  public int getHeight() {
+	    return height;
+	  }
+	  public int getWidth() {
+	    return width;
+	  }
+	  public int getVO() {
+	    return verticalShift;
+	  }
+	  public int getHO() {
+	    return horizontalShift;
+	  }
+	  
+	  public String toString() {
+	    return "Height: " + height + ", Width: " + width + ", VO: " + verticalShift + ", HO: " + horizontalShift;
+	  }
+	}
