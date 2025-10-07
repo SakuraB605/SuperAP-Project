@@ -25,7 +25,7 @@ public class Square {
     isLocked = false;
   }
   Square(boolean isLocked){  
-	    arr = null;
+//	    arr = null;
 //	    num = null;
 	    isLocked = false;
 	  }
