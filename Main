@@ -145,7 +145,6 @@ public class Main extends JPanel {
       System.out.println("THIS IS THE END");
       System.out.println();
 
-      int reachCount = 1;
       for (int row = 0; row < arr.length; row++) {
         for (int col = 0; col < arr[0].length; col++) {
           if (arr[row][col] != null) {
@@ -164,6 +163,8 @@ public class Main extends JPanel {
                         i--;
                         j = row + verOff + 1;
                         break;
+                      } else {
+                    	  arr[row][col] = new Square(arr[row][col].getNumber(), perm);
                       }
                     }
                   }
@@ -174,17 +175,14 @@ public class Main extends JPanel {
           }
         }
       }
-/*
-      boolean isLocked = false;
-      for (int row = 0; row < arr.length; row++) {
+
+        for (int row = 0; row < arr.length; row++) {
     	  for (int col = 0; col < arr[0].length; col++) {
     		  if (arr[row][col] != null) {
     			 ArrayList<Permutations> perm = arr[row][col].getArrayList();    			  
     	         for (int i = 0; i < perm.size(); i++) {
     	            int h = perm.get(i).getHeight();
     	            int w = perm.get(i).getWidth();
-    	            int verOff = perm.get(i).getVO();
-    	            int horOff = perm.get(i).getHO();
     	            if (perm.size() == 1) {
     	            	if(h > w) {
     	            		for (int j = 0; j < h; j++) {
@@ -210,7 +208,7 @@ public class Main extends JPanel {
     	      }
     	  }
       }
-*/
+
 /*       for (int row = 0; row < arr.length; row++) {
          for (int col = 0; col < arr[0].length; col++) {
            if (arr[row][col] != null) {
