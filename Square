@@ -1,5 +1,3 @@
-package home.sj;
-
 import java.awt.Color;
 import java.util.ArrayList;
 
@@ -7,7 +5,7 @@ public class Square {
   int num;
   Color color;
   ArrayList<Permutations> arr;
-//  boolean isLocked;
+  boolean isLocked;
 /*Square(int number, Color color){
     num = number;
     this.color = color;
@@ -22,11 +20,19 @@ public class Square {
       }
     }
   }
- /*
+  Square(int number, ArrayList<Permutations> array, boolean isLocked){
+	    arr = new ArrayList<Permutations>();
+	    num = number;
+	    if (array != null) {      
+	      for (int i = 0; i < array.size(); i++) {
+	        arr.add(array.get(i));
+	      }
+	    }
+	    isLocked = false;
+	  }
   Square(boolean isLocked){
     this.isLocked = isLocked;
   } 
-  */
   public int getNumber() {
     return num; 
   }
