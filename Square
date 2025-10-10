@@ -1,3 +1,5 @@
+package home.sj;
+
 import java.awt.Color;
 import java.util.ArrayList;
 
@@ -28,7 +30,7 @@ public class Square {
 	        arr.add(array.get(i));
 	      }
 	    }
-	    isLocked = false;
+	    this.isLocked = isLocked;
 	  }
   Square(boolean isLocked){
     this.isLocked = isLocked;
