@@ -4,10 +4,10 @@ import java.awt.Color;
 import java.util.ArrayList;
 
 public class Square {
-  int num;
-  Color color;
-  ArrayList<Permutations> arr;
-  boolean isLocked;
+  private int num;
+  private Color color;
+  private ArrayList<Permutations> arr;
+  private boolean isLocked;
 /*Square(int number, Color color){
     num = number;
     this.color = color;
@@ -31,10 +31,13 @@ public class Square {
 	      }
 	    }
 	    this.isLocked = isLocked;
-	  }
+  }
   Square(boolean isLocked){
     this.isLocked = isLocked;
   } 
+  public boolean isLocked() {
+	    return isLocked;
+  }
   public int getNumber() {
     return num; 
   }
