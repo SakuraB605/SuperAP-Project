@@ -16,372 +16,293 @@ public class Main extends JPanel {
 //      window.setVisible(true);
 
     Square[][] arr = new Square[6][4];
-      arr[0][0]= null;
-      arr[0][1]= new Square(1, null);
-      arr[0][2]= new Square(3, null);
-      arr[0][3]= new Square(1, null);
-      arr[1][0]= new Square(2, null);
-      arr[1][1]= new Square(1, null);
-      arr[1][2]= null;
-      arr[1][3]= new Square(1, null);
-      arr[2][0]= new Square(1, null);
-      arr[2][1]= new Square(1, null);
-      arr[2][2]= null;
-      arr[2][3]= new Square(1, null);
-      arr[3][0]= null;
-      arr[3][1]= null;
-      arr[3][2]= new Square(3, null);
-      arr[3][3]= new Square(1, null);
-      arr[4][0]= new Square(2, null);
-      arr[4][1]= null;
-      arr[4][2]= null;
-      arr[4][3]= new Square(2, null);
-      arr[5][0]= new Square(4, null);
-      arr[5][1]= null;
-      arr[5][2]= null;
-      arr[5][3]= null;
-      /*
-      arr[0][0]= null;
-      arr[0][1]= new Square(1, null, false);
-      arr[0][2]= new Square(3, null, false);
-      arr[0][3]= new Square(1, null, false);
-      arr[1][0]= new Square(2, null, false);
-      arr[1][1]= new Square(1, null, false);
-      arr[0][1]= new Square(1, null, false);
-      arr[0][2]= new Square(3, null, false);
-      arr[0][3]= new Square(1, null, false);
-      arr[1][0]= new Square(2, null, false);
-      arr[1][1]= new Square(1, null, false);
-      arr[1][2]= null;
-      arr[1][3]= new Square(1, null, false);
-      arr[2][0]= new Square(1, null, false);
-      arr[2][1]= new Square(1, null, false);
-      arr[1][3]= new Square(1, null, false);
-      arr[2][0]= new Square(1, null, false);
-      arr[2][1]= new Square(1, null, false);
-      arr[2][2]= null;
-      arr[2][3]= new Square(1, null, false);
-      arr[2][3]= new Square(1, null, false);
-      arr[3][0]= null;
-      arr[3][1]= null;
-      arr[3][2]= new Square(3, null, false);
-      arr[3][3]= new Square(1, null, false);
-      arr[4][0]= new Square(2, null, false);
-      arr[3][2]= new Square(3, null, false);
-      arr[3][3]= new Square(1, null, false);
-      arr[4][0]= new Square(2, null, false);
-      arr[4][1]= null;
-      arr[4][2]= null;
-      arr[4][3]= new Square(2, null, false);
-      arr[5][0]= new Square(4, null, false);
-      arr[4][3]= new Square(2, null, false);
-      arr[5][0]= new Square(4, null, false);
-      arr[5][1]= null;
-      arr[5][2]= null;
-      arr[5][3]= null;
-       */
+    arr[0][0] = null;
+    arr[0][1] = new Square(1, null);
+    arr[0][2] = new Square(3, null);
+    arr[0][3] = new Square(1, null);
+    arr[1][0] = new Square(2, null);
+    arr[1][1] = new Square(1, null);
+    arr[1][2] = null;
+    arr[1][3] = new Square(1, null);
+    arr[2][0] = new Square(1, null);
+    arr[2][1] = new Square(1, null);
+    arr[2][2] = null;
+    arr[2][3] = new Square(1, null);
+    arr[3][0] = null;
+    arr[3][1] = null;
+    arr[3][2] = new Square(3, null);
+    arr[3][3] = new Square(1, null);
+    arr[4][0] = new Square(2, null);
+    arr[4][1] = null;
+    arr[4][2] = null;
+    arr[4][3] = new Square(2, null);
+    arr[5][0] = new Square(4, null);
+    arr[5][1] = null;
+    arr[5][2] = null;
+    arr[5][3] = null;
+    /*
+     * arr[0][0]= null; arr[0][1]= new Square(1, null, false); arr[0][2]= new
+     * Square(3, null, false); arr[0][3]= new Square(1, null, false); arr[1][0]= new
+     * Square(2, null, false); arr[1][1]= new Square(1, null, false); arr[0][1]= new
+     * Square(1, null, false); arr[0][2]= new Square(3, null, false); arr[0][3]= new
+     * Square(1, null, false); arr[1][0]= new Square(2, null, false); arr[1][1]= new
+     * Square(1, null, false); arr[1][2]= null; arr[1][3]= new Square(1, null,
+     * false); arr[2][0]= new Square(1, null, false); arr[2][1]= new Square(1, null,
+     * false); arr[1][3]= new Square(1, null, false); arr[2][0]= new Square(1, null,
+     * false); arr[2][1]= new Square(1, null, false); arr[2][2]= null; arr[2][3]=
+     * new Square(1, null, false); arr[2][3]= new Square(1, null, false); arr[3][0]=
+     * null; arr[3][1]= null; arr[3][2]= new Square(3, null, false); arr[3][3]= new
+     * Square(1, null, false); arr[4][0]= new Square(2, null, false); arr[3][2]= new
+     * Square(3, null, false); arr[3][3]= new Square(1, null, false); arr[4][0]= new
+     * Square(2, null, false); arr[4][1]= null; arr[4][2]= null; arr[4][3]= new
+     * Square(2, null, false); arr[5][0]= new Square(4, null, false); arr[4][3]= new
+     * Square(2, null, false); arr[5][0]= new Square(4, null, false); arr[5][1]=
+     * null; arr[5][2]= null; arr[5][3]= null;
+     */
 
-      for (int row = 0; row < arr.length; row++) {
-        for (int col = 0; col < arr[0].length; col++) {
-          if(arr[row][col] == null) {
-            System.out.print(" x ");
-          }
-          if(arr[row][col] != null) {
-            System.out.print(" " + arr[row][col].getNumber() + " ");
-          }
-        }
-        System.out.println();
-      }
-      System.out.println();
-
-      ArrayList<Permutations> arr2 = new ArrayList<>();
-      ArrayList<Permutations> arr3 = new ArrayList<>();
-      ArrayList<Multiples> array = new ArrayList<>();
-
-      for (int row = 0; row < arr.length; row++) {
-        for (int col = 0; col < arr[0].length; col++) {
-          if (arr[row][col] != null) {
-          int num = arr[row][col].getNumber();
-            array = Multiples.getMultiples(num);
-            for(int i = 0; i < array.size(); i++) {
-              System.out.println("Height: " + array.get(i).getHeight() + " Width: " + array.get(i).getWidth());
-            }
-            for (int i = 0; i < array.size(); i++) {
-              int height = array.get(i).getHeight();
-              int width = array.get(i).getWidth();
-              for (int j = 0; j < height; j++) {
-                for (int k = 0; k < width; k++) {
-                  if(row + j - height + 1 >= 0 && row + j < arr.length && col + k - width + 1 >= 0 && col + k < arr[0].length) {
-                    arr2.add(new Permutations(j, k, height, width));
-                    arr[row][col] = new Square(arr[row][col].getNumber(), arr2);
-                  }
-
-                  arr3.add(new Permutations(j, k, height, width));
-                }
-              }
-            }
-            for(int i = 0; i < arr2.size(); i++) {
-              System.out.println("Height: " + arr2.get(i).getHeight() + " Width: " + arr2.get(i).getWidth() + " Vertical Offset: " + arr2.get(i).getVO() + " Horizontal Offset: " + arr2.get(i).getHO());
-            }
-            System.out.println("--------------------------------------------------------------");
-            arr2.clear();
-          }
-        }
-      }
-      System.out.println("THIS IS THE END");
-      System.out.println();
-
-      for (int row = 0; row < arr.length; row++) {
-        for (int col = 0; col < arr[0].length; col++) {
-          if (arr[row][col] != null) {
-            ArrayList<Permutations> perm = arr[row][col].getArrayList();
-            for (int i = 0; i < perm.size(); i++) {
-              if (perm.size() > 1) {
-                int height = perm.get(i).getHeight();
-                int width = perm.get(i).getWidth();
-                int verOff = perm.get(i).getVO();
-                int horOff = perm.get(i).getHO();
-                  for (int j = row + verOff - height + 1; j <= row + verOff; j++) {
-                    for (int k = col + horOff - width + 1; k <= col + horOff; k++) {
-                      if(arr[j][k] != null && !(row == j && col == k)) {
-                        perm.remove(i);
-                        arr[row][col] = new Square(arr[row][col].getNumber(), perm);
-                        i--;
-                        j = row + verOff + 1;
-                        break;
-                      } else {
-                    	  arr[row][col] = new Square(arr[row][col].getNumber(), perm);
-                      }
-                    }
-                  }
-              }
-           }
-            System.out.println(perm);
-            System.out.println("--------------------------------------------------------------");
-          }
-        }
-      }
-//null pointer exception ???
-        for (int row = 0; row < arr.length; row++) {
-    	  for (int col = 0; col < arr[0].length; col++) {
-    		  if (arr[row][col] != null) {
-    			 ArrayList<Permutations> perm = arr[row][col].getArrayList();    			  
-    	         for (int i = 0; i < perm.size(); i++) {
-    	            int h = perm.get(i).getHeight();
-    	            int w = perm.get(i).getWidth();
-    	            if (perm.size() == 1) {
-    	            	if(h > w) {
-    	            		for (int j = 0; j < h; j++) {
-    	            		  if(arr[row + j][col] != null) {
-    	            		    arr[row + j][col] = new Square(arr[row][col].getNumber(), perm, true);
-    	            		  } else {
-    	            		    arr[row + j][col] = new Square(true);
-    	            		  }
-      	            		}
-      	            	}
-      	            	if(w > h) {
-      	            		for (int j = 0; j < h; j++) {
-      	            		  if(arr[row][col + j] != null) {
-    	            		    arr[row][col + j] = new Square(arr[row][col].getNumber(), perm, true);
-    	            		  } else {
-    	            		    arr[row][col + j] = new Square(true);
-    	            		  }
-      	            			
-      	            		}
-      	            	}
-      	            }
-    	         } 
-    	      }
-    	  }
-      }
-
-/*       for (int row = 0; row < arr.length; row++) {
-         for (int col = 0; col < arr[0].length; col++) {
-           if (arr[row][col] != null) {
-           int num = arr[row][col].getNumber();
-             array = Multiples.getMultiples(num);
-             for(int i = 0; i < array.size(); i++) {
-               System.out.println("Height: " + array.get(i).getHeight() + " Width: " + array.get(i).getWidth());
-             }
-             for (int i = 0; i < array.size(); i++) {
-               int height = array.get(i).getHeight();
-               int width = array.get(i).getWidth();
-               for (int j = 0; j < height; j++) {
-                 for (int k = 0; k < width; k++) {
-                   arr2.add(new Permutations(row + j, col - k, height, width));
-                   arr[row][col] = new Square(arr[row][col].getNumber(), arr2);
-                   arr3.add(new Permutations(row + j, col - k, height, width));
-                 }
-               }
-             }
-             for(int i = 0; i < arr2.size(); i++) {
-               System.out.println("Height: " + arr2.get(i).getHeight() + " Width: " + arr2.get(i).getWidth() + " Vertical Offset: " + arr2.get(i).getVO() + " Horizontal Offset: " + arr2.get(i).getHO());
-
-             }
-             System.out.println("--------------------------------------------------------------");
-             arr2.clear();
-           }
-         }
-       }
-       System.out.println("THIS IS THE END");
-       System.out.println();
-
-       for (int row = 0; row < arr.length; row++) {
-         for (int col = 0; col < arr[0].length; col++) {
-           if(arr[row][col] == null) {
-             System.out.print(" x ");
-           }
-           if(arr[row][col] != null) {
-             System.out.print(" " + arr[row][col].getNumber() + " ");
-           }
-         }
-         System.out.println();
-       }
-       System.out.println();
-       ArrayList<Permutations> arr4 = new ArrayList<>();
-       ArrayList<Permutations> arr5 = new ArrayList<>();
-       ArrayList<Multiples> array1 = new ArrayList<>();
-
-        for (int row = 0; row < arr.length; row++) {
-          for (int col = 0; col < arr[0].length; col++) {
-            if (arr[row][col] != null) {
-            int num = arr[row][col].getNumber();
-              array1 = Multiples.getMultiples(num);
-              for(int i = 0; i < array1.size(); i++) {
-                System.out.println("Height: " + array1.get(i).getHeight() + " Width: " + array1.get(i).getWidth());
-              }
-              for (int i = 0; i < array1.size(); i++) {
-                int height = array1.get(i).getHeight();
-                int width = array1.get(i).getWidth();
-                for (int j = 0; j < height; j++) {
-                  for (int k = 0; k < width; k++) {
-                    if(row + j > -1 && col - k > -1 && row - j > -1 && col + k > -1) {
-                      arr4.add(new Permutations(row + j, col - k, height, width));
-                      arr[row][col] = new Square(arr[row][col].getNumber(), arr4);
-                    } 
-                    arr5.add(new Permutations(row + j, col - k, height, width));
-                  }
-                }
-              }
-              for(int x = 0; x < arr4.size(); x++) {
-                System.out.println("Height: " + arr4.get(x).getHeight() + " Width: " + arr4.get(x).getWidth() + " Vertical Offset: " + arr4.get(x).getVO() + " Horizontal Offset: " + arr4.get(x).getHO());
-              }
-              System.out.println("--------------------------------------------------------------");
-              arr4.clear();
-            }
-          }
-        }
-*/        
-/*      Square[][] arr = new Square[6][4];
-        arr[0][0]=null;
-        arr[0][1]=new Square(1, Color.BLUE);
-        arr[0][2]=new Square(3, Color.RED);
-        arr[0][3]=new Square(1, Color.RED);
-        arr[1][0]=new Square(2, Color.BLUE);
-        arr[1][1]=new Square(1, Color.RED);
-        arr[1][2]=null;
-        arr[1][3]=new Square(1, Color.BLACK);
-        arr[2][0]=new Square(1, Color.RED);
-        arr[2][1]=new Square(1, Color.BLACK);
-        arr[2][2]=null;
-        arr[2][3]=new Square(1, Color.RED);
-        arr[3][0]=null;
-        arr[3][1]=null;
-        arr[3][2]=new Square(3, Color.RED);
-        arr[3][3]=new Square(1, Color.BLACK);
-        arr[4][0]=new Square(2, Color.BLUE);
-        arr[4][1]=null;
-        arr[4][2]=null;
-        arr[4][3]=new Square(2, Color.PINK);
-        arr[5][0]=new Square(4, Color.GREEN);
-        arr[5][1]=null;
-        arr[5][2]=null;
-        arr[5][3]=null;
-*/             
-/*      int[][] arr1 = new int[6][4];
-        arr1[0][1] = 1;
-        arr1[0][1] = 1;
-        arr1[0][2] = 3;
-        arr1[0][3] = 1;
-        arr1[1][0] = 2;
-        arr1[1][1] = 1;
-        arr1[1][3] = 1;
-        arr1[2][0] = 1;
-        arr1[2][1] = 1;
-        arr1[2][3] = 1;
-        arr1[3][2] = 3;
-        arr1[3][3] = 1;
-        arr1[4][0] = 2;
-        arr1[4][3] = 2;
-        arr1[5][0] = 4;
-*/
-/*        find the permutations and then take the array
-        ex. for arr1[0][2]
-        3 can be 1x3 or 3x1
-        use 1 as height and 3 as width
-        int i = 1; i++ somewhere
-        whatever the row number is - the height + i 
-        col - width + i       
-
-/*      int clueNumber; 
     for (int row = 0; row < arr.length; row++) {
-         for (int col = 0; col < arr[0].length; col++) {
-           Square clue = arr[row][col];
-           if (clue != null) {
-                clueNumber = clue.getNumber();
-                // generate multiples and permutations for this clue
-             }
-         }
-       }
-       put clueNumber into the loop that is getting the permutation for num
-*/                            
-/*     for (int r = 0; r < arr.length; r++) {
-       for(int c = 0; c < arr[0].length; c++) {
-         if(arr[r][c] != null && arr[r][c].getNumber() < 1) {
-          for(Permutations p : arr[r][c].getArrayList()) {
-            if(p.getVO() == -1 || p.getHO() == -1) {
-             arr[r][c].getArrayList().remove(p);
-             arr[r][c] = new Square(arr[r][c].getNumber(), arr[r][c].getArrayList());
+      for (int col = 0; col < arr[0].length; col++) {
+        if (arr[row][col] == null) {
+          System.out.print(" x ");
+        }
+        if (arr[row][col] != null) {
+          System.out.print(" " + arr[row][col].getNumber() + " ");
+        }
+      }
+      System.out.println();
+    }
+    System.out.println();
+
+    ArrayList<Permutations> arr2 = new ArrayList<>();
+    ArrayList<Permutations> arr3 = new ArrayList<>();
+    ArrayList<Multiples> array = new ArrayList<>();
+
+    for (int row = 0; row < arr.length; row++) {
+      for (int col = 0; col < arr[0].length; col++) {
+        if (arr[row][col] != null) {
+          int num = arr[row][col].getNumber();
+          array = Multiples.getMultiples(num);
+          for (int i = 0; i < array.size(); i++) {
+            System.out.println("Height: " + array.get(i).getHeight() + " Width: " + array.get(i).getWidth());
+          }
+          for (int i = 0; i < array.size(); i++) {
+            int height = array.get(i).getHeight();
+            int width = array.get(i).getWidth();
+            for (int j = 0; j < height; j++) {
+              for (int k = 0; k < width; k++) {
+                if (row + j - height + 1 >= 0 && row + j < arr.length && col + k - width + 1 >= 0
+                    && col + k < arr[0].length) {
+                  arr2.add(new Permutations(j, k, height, width));
+                  arr[row][col] = new Square(arr[row][col].getNumber(), arr2);
+                }
+
+                arr3.add(new Permutations(j, k, height, width));
+              }
             }
           }
-         }
+          for (int i = 0; i < arr2.size(); i++) {
+            System.out.println("Height: " + arr2.get(i).getHeight() + " Width: " + arr2.get(i).getWidth()
+                + " Vertical Offset: " + arr2.get(i).getVO() + " Horizontal Offset: " + arr2.get(i).getHO());
+          }
+          System.out.println("--------------------------------------------------------------");
+          arr2.clear();
         }
-       }
-       ArrayList<Permutations> list = null;
-       for (int r = 0; r < arr.length; r++) {
-         for(int c = 0; c < arr[0].length; c++) {
-           if(arr[r][c] != null) {
-             list = arr[r][c].getArrayList();
-             for (int i = 0; i < list.size(); i++) {
-               System.out.println("Height: " + list.get(i).getHeight() + " Width: " + list.get(i).getWidth() + " Vertical Offset: " + list.get(i).getVO() + " Horizontal Offset: " + list.get(i).getHO());
-             }
-           }
-           //System.out.println("--------------------------------------------------------------");
-         }
-       }
-*/       
-
-       //Scanner sc = new Scanner(System.in);
-       //System.out.print("Enter a number: ");
-       //int number = sc.nextInt();
-       //int num = number;
-
-/*       ArrayList<Multiples> array = new ArrayList<>();
-       array = Multiples.getMultiples(num); 
-       for(int i = 0; i < array.size(); i++) {
-         System.out.println("Height: " + array.get(i).getHeight() + " Width: " + array.get(i).getWidth());
-       }
-       ArrayList<Permutations> arr2 = new ArrayList<>();
-       for (int i = 0; i < array.size(); i++) {
-         for (int j = 0; j < array.get(i).getHeight(); j++) {
-           for (int k = 0; k < array.get(i).getWidth(); k++) {
-             arr2.add(new Permutations(j, k, array.get(i).getHeight(), array.get(i).getWidth()));
-           }
-         }
-       }
-       for(int i = 0; i < arr2.size(); i++) {
-         System.out.println("Height: " + arr2.get(i).getHeight() + " Width: " + arr2.get(i).getWidth() + " Vertical Offset: " + arr2.get(i).getVO() + " Horizontal Offset: " + arr2.get(i).getHO());
-       }
-*/       
+      }
     }
+    System.out.println("THIS IS THE END");
+    System.out.println();
+
+    for (int row = 0; row < arr.length; row++) {
+      for (int col = 0; col < arr[0].length; col++) {
+        if (arr[row][col] != null) {
+          ArrayList<Permutations> perm = arr[row][col].getArrayList();
+          for (int i = 0; i < perm.size(); i++) {
+            if (perm.size() > 1) {
+              int height = perm.get(i).getHeight();
+              int width = perm.get(i).getWidth();
+              int verOff = perm.get(i).getVO();
+              int horOff = perm.get(i).getHO();
+              for (int j = row + verOff - height + 1; j <= row + verOff; j++) {
+                for (int k = col + horOff - width + 1; k <= col + horOff; k++) {
+                  if (arr[j][k] != null && !(row == j && col == k)) {
+                    perm.remove(i);
+                    arr[row][col] = new Square(arr[row][col].getNumber(), perm);
+                    i--;
+                    j = row + verOff + 1;
+                    break;
+                  } else {
+                    arr[row][col] = new Square(arr[row][col].getNumber(), perm);
+                  }
+                }
+              }
+            }
+          }
+          System.out.println(perm);
+          System.out.println("--------------------------------------------------------------");
+        }
+      }
+    }
+
+//null pointer exception ???
+//      /*
+    boolean isClue = false;
+    for (int row = 0; row < arr.length; row++) {
+      for (int col = 0; col < arr[0].length; col++) {
+        if (arr[row][col] != null && arr[row][col].getNumber() > 0) {
+          isClue = true;
+        } else {
+          isClue = false;
+        }
+        if (arr[row][col] != null && isClue) {
+          ArrayList<Permutations> perm = arr[row][col].getArrayList();
+
+          if (perm.size() == 1) {
+            int h = perm.get(0).getHeight();
+            int w = perm.get(0).getWidth();
+            int vo = perm.get(0).getVO();
+            int ho = perm.get(0).getHO();
+            int num = arr[row][col].getNumber();
+
+            for (int j = 0; j < h; j++) {
+              for (int k = 0; k < w; k++) {
+                arr[row - (h - vo - 1) + j][col - (w - ho - 1) + k] = new Square(true);
+              }
+            }
+            arr[row][col] = new Square(num, perm, true);
+            /*
+             * if (h > w) { arr[row][col] = new Square(arr[row][col].getNumber(), perm,
+             * true); for (int j = 0; j < h; j++) { if (arr[row + j][col] != null) { arr[row
+             * + j][col] = new Square(arr[row][col].getNumber(), perm, true); } else {
+             * arr[row + j][col] = new Square(true); } } } if (w > h) { arr[row][col] = new
+             * Square(arr[row][col].getNumber(), perm, true); for (int j = 0; j < h; j++) {
+             * if (arr[row][col + j] != null) { arr[row][col + j] = new
+             * Square(arr[row][col].getNumber(), perm, true); } else { arr[row][col + j] =
+             * new Square(true); }
+             * 
+             * } }
+             */
+          }
+
+        }
+      }
+    }
+
+    for (int row = 0; row < arr.length; row++) {
+      for (int col = 0; col < arr[0].length; col++) {
+        if (arr[row][col] != null && arr[row][col].getIsLocked()) {
+          System.out.println("Row: " + row + ", Col: " + col);
+        }
+      }
+    }
+//*/
+    /*
+     * for (int row = 0; row < arr.length; row++) { for (int col = 0; col <
+     * arr[0].length; col++) { if (arr[row][col] != null) { int num =
+     * arr[row][col].getNumber(); array = Multiples.getMultiples(num); for(int i =
+     * 0; i < array.size(); i++) { System.out.println("Height: " +
+     * array.get(i).getHeight() + " Width: " + array.get(i).getWidth()); } for (int
+     * i = 0; i < array.size(); i++) { int height = array.get(i).getHeight(); int
+     * width = array.get(i).getWidth(); for (int j = 0; j < height; j++) { for (int
+     * k = 0; k < width; k++) { arr2.add(new Permutations(row + j, col - k, height,
+     * width)); arr[row][col] = new Square(arr[row][col].getNumber(), arr2);
+     * arr3.add(new Permutations(row + j, col - k, height, width)); } } } for(int i
+     * = 0; i < arr2.size(); i++) { System.out.println("Height: " +
+     * arr2.get(i).getHeight() + " Width: " + arr2.get(i).getWidth() +
+     * " Vertical Offset: " + arr2.get(i).getVO() + " Horizontal Offset: " +
+     * arr2.get(i).getHO());
+     * 
+     * } System.out.println(
+     * "--------------------------------------------------------------");
+     * arr2.clear(); } } } System.out.println("THIS IS THE END");
+     * System.out.println();
+     * 
+     * for (int row = 0; row < arr.length; row++) { for (int col = 0; col <
+     * arr[0].length; col++) { if(arr[row][col] == null) { System.out.print(" x ");
+     * } if(arr[row][col] != null) { System.out.print(" " +
+     * arr[row][col].getNumber() + " "); } } System.out.println(); }
+     * System.out.println(); ArrayList<Permutations> arr4 = new ArrayList<>();
+     * ArrayList<Permutations> arr5 = new ArrayList<>(); ArrayList<Multiples> array1
+     * = new ArrayList<>();
+     * 
+     * for (int row = 0; row < arr.length; row++) { for (int col = 0; col <
+     * arr[0].length; col++) { if (arr[row][col] != null) { int num =
+     * arr[row][col].getNumber(); array1 = Multiples.getMultiples(num); for(int i =
+     * 0; i < array1.size(); i++) { System.out.println("Height: " +
+     * array1.get(i).getHeight() + " Width: " + array1.get(i).getWidth()); } for
+     * (int i = 0; i < array1.size(); i++) { int height = array1.get(i).getHeight();
+     * int width = array1.get(i).getWidth(); for (int j = 0; j < height; j++) { for
+     * (int k = 0; k < width; k++) { if(row + j > -1 && col - k > -1 && row - j > -1
+     * && col + k > -1) { arr4.add(new Permutations(row + j, col - k, height,
+     * width)); arr[row][col] = new Square(arr[row][col].getNumber(), arr4); }
+     * arr5.add(new Permutations(row + j, col - k, height, width)); } } } for(int x
+     * = 0; x < arr4.size(); x++) { System.out.println("Height: " +
+     * arr4.get(x).getHeight() + " Width: " + arr4.get(x).getWidth() +
+     * " Vertical Offset: " + arr4.get(x).getVO() + " Horizontal Offset: " +
+     * arr4.get(x).getHO()); } System.out.println(
+     * "--------------------------------------------------------------");
+     * arr4.clear(); } } }
+     */
+    /*
+     * Square[][] arr = new Square[6][4]; arr[0][0]=null; arr[0][1]=new Square(1,
+     * Color.BLUE); arr[0][2]=new Square(3, Color.RED); arr[0][3]=new Square(1,
+     * Color.RED); arr[1][0]=new Square(2, Color.BLUE); arr[1][1]=new Square(1,
+     * Color.RED); arr[1][2]=null; arr[1][3]=new Square(1, Color.BLACK);
+     * arr[2][0]=new Square(1, Color.RED); arr[2][1]=new Square(1, Color.BLACK);
+     * arr[2][2]=null; arr[2][3]=new Square(1, Color.RED); arr[3][0]=null;
+     * arr[3][1]=null; arr[3][2]=new Square(3, Color.RED); arr[3][3]=new Square(1,
+     * Color.BLACK); arr[4][0]=new Square(2, Color.BLUE); arr[4][1]=null;
+     * arr[4][2]=null; arr[4][3]=new Square(2, Color.PINK); arr[5][0]=new Square(4,
+     * Color.GREEN); arr[5][1]=null; arr[5][2]=null; arr[5][3]=null;
+     */
+    /*
+     * int[][] arr1 = new int[6][4]; arr1[0][1] = 1; arr1[0][1] = 1; arr1[0][2] = 3;
+     * arr1[0][3] = 1; arr1[1][0] = 2; arr1[1][1] = 1; arr1[1][3] = 1; arr1[2][0] =
+     * 1; arr1[2][1] = 1; arr1[2][3] = 1; arr1[3][2] = 3; arr1[3][3] = 1; arr1[4][0]
+     * = 2; arr1[4][3] = 2; arr1[5][0] = 4;
+     */
+    /*
+     * find the permutations and then take the array ex. for arr1[0][2] 3 can be 1x3
+     * or 3x1 use 1 as height and 3 as width int i = 1; i++ somewhere whatever the
+     * row number is - the height + i col - width + i
+     * 
+     * /* int clueNumber; for (int row = 0; row < arr.length; row++) { for (int col
+     * = 0; col < arr[0].length; col++) { Square clue = arr[row][col]; if (clue !=
+     * null) { clueNumber = clue.getNumber(); // generate multiples and permutations
+     * for this clue } } } put clueNumber into the loop that is getting the
+     * permutation for num
+     */
+    /*
+     * for (int r = 0; r < arr.length; r++) { for(int c = 0; c < arr[0].length; c++)
+     * { if(arr[r][c] != null && arr[r][c].getNumber() < 1) { for(Permutations p :
+     * arr[r][c].getArrayList()) { if(p.getVO() == -1 || p.getHO() == -1) {
+     * arr[r][c].getArrayList().remove(p); arr[r][c] = new
+     * Square(arr[r][c].getNumber(), arr[r][c].getArrayList()); } } } } }
+     * ArrayList<Permutations> list = null; for (int r = 0; r < arr.length; r++) {
+     * for(int c = 0; c < arr[0].length; c++) { if(arr[r][c] != null) { list =
+     * arr[r][c].getArrayList(); for (int i = 0; i < list.size(); i++) {
+     * System.out.println("Height: " + list.get(i).getHeight() + " Width: " +
+     * list.get(i).getWidth() + " Vertical Offset: " + list.get(i).getVO() +
+     * " Horizontal Offset: " + list.get(i).getHO()); } } //System.out.println(
+     * "--------------------------------------------------------------"); } }
+     */
+
+    // Scanner sc = new Scanner(System.in);
+    // System.out.print("Enter a number: ");
+    // int number = sc.nextInt();
+    // int num = number;
+
+    /*
+     * ArrayList<Multiples> array = new ArrayList<>(); array =
+     * Multiples.getMultiples(num); for(int i = 0; i < array.size(); i++) {
+     * System.out.println("Height: " + array.get(i).getHeight() + " Width: " +
+     * array.get(i).getWidth()); } ArrayList<Permutations> arr2 = new ArrayList<>();
+     * for (int i = 0; i < array.size(); i++) { for (int j = 0; j <
+     * array.get(i).getHeight(); j++) { for (int k = 0; k < array.get(i).getWidth();
+     * k++) { arr2.add(new Permutations(j, k, array.get(i).getHeight(),
+     * array.get(i).getWidth())); } } } for(int i = 0; i < arr2.size(); i++) {
+     * System.out.println("Height: " + arr2.get(i).getHeight() + " Width: " +
+     * arr2.get(i).getWidth() + " Vertical Offset: " + arr2.get(i).getVO() +
+     * " Horizontal Offset: " + arr2.get(i).getHO()); }
+     */
+  }
 }
