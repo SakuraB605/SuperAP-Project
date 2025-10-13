@@ -287,8 +287,89 @@ public class Main{
 //import java.awt.Color;
 import java.util.ArrayList;
 
+
 public class Main{
   public static void main(String[] args) {
+Square[][] arr = new Square[15][15];
+    
+    arr[0][0] = new Square(5, null);
+    arr[0][9] = new Square(5, null);
+    arr[0][10] = new Square(1, null);
+    arr[0][12] = new Square(6, null);
+
+    arr[1][0] = new Square(3, null);
+    arr[1][2] = new Square(2, null);
+    arr[1][4] = new Square(8, null);
+    arr[1][11] = new Square(2, null);
+    
+    arr[2][1] = new Square(1, null);
+    arr[2][2] = new Square(1, null);
+    arr[2][3] = new Square(2, null);
+    arr[2][5] = new Square(1, null);
+    arr[2][8] = new Square(5, null);
+    arr[2][11] = new Square(1, null);
+    
+    arr[3][4] = new Square(4, null);
+    arr[3][5] = new Square(1, null);
+    arr[3][6] = new Square(5, null);
+    
+    arr[4][0] = new Square(2, null);
+    arr[4][5] = new Square(6, null);
+    arr[4][8] = new Square(1, null);
+    arr[4][10] = new Square(1, null);
+    arr[4][12] = new Square(2, null);
+    arr[4][13] = new Square(2, null);
+    
+    arr[5][0] = new Square(4, null);
+    arr[5][4] = new Square(4, null);
+    arr[5][6] = new Square(4, null);
+    arr[5][13] = new Square(2, null);
+    
+    arr[6][4] = new Square(4, null);
+    arr[6][8] = new Square(6, null);
+    arr[6][9] = new Square(3, null);
+    arr[6][13] = new Square(2, null);
+    
+    arr[7][4] = new Square(4, null);
+    arr[7][5] = new Square(3, null);
+    arr[7][9] = new Square(1, null);
+    arr[7][13] = new Square(2, null);
+    
+    arr[8][5] = new Square(5, null);
+    arr[8][7] = new Square(1, null);
+    arr[8][9] = new Square(2, null);
+    arr[8][13] = new Square(2, null);
+    
+    arr[9][4] = new Square(5, null);
+    arr[9][6] = new Square(2, null);
+    arr[9][8] = new Square(3, null);
+    arr[9][10] = new Square(5, null);
+    arr[9][11] = new Square(7, null);
+    arr[9][13] = new Square(2, null);
+    arr[9][14] = new Square(15, null);
+    
+    arr[10][0] = new Square(2, null);
+    arr[10][1] = new Square(5, null);
+    arr[10][6] = new Square(4, null);
+    arr[10][12] = new Square(3, null);
+    
+    arr[11][4] = new Square(5, null);
+    arr[11][13] = new Square(3, null);
+    
+    arr[12][1] = new Square(6, null);
+    arr[12][7] = new Square(18, null);
+    arr[12][9] = new Square(6, null);
+    arr[12][10] = new Square(3, null);
+    arr[12][11] = new Square(1, null);
+    arr[12][12] = new Square(1, null);
+    
+    arr[13][9] = new Square(8, null);
+    arr[13][12] = new Square(1, null);
+    arr[13][13] = new Square(2, null);
+    
+    arr[14][12] = new Square(1, null);
+    arr[14][13] = new Square(1, null);
+/* solved
     Square[][] arr = new Square[6][4];
     arr[0][0] = null;
     arr[0][1] = new Square(1, null);
@@ -314,7 +395,7 @@ public class Main{
     arr[5][1] = null;
     arr[5][2] = null;
     arr[5][3] = null;
-    
+*/
     for (int row = 0; row < arr.length; row++) {
       for (int col = 0; col < arr[0].length; col++) {
         if (arr[row][col] == null) {
