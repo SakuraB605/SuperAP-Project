@@ -44,4 +44,7 @@ public class Square {
   public ArrayList<Permutations> getArrayList() {
     return arr;
   }
+  public boolean getIsLocked() {
+    return isLocked;
+  }
 }
