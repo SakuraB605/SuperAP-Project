@@ -225,5 +225,14 @@ Square[][] arr = new Square[15][15];
         }
       }
     }
+    for (int row = 0; row < arr.length; row++) {
+      for (int col = 0; col < arr[0].length; col++) {
+        if (arr[row][col] != null && arr[row][col].getNumber() > 0) {
+          // ex. the 6 at the bottom is the only number that can reach the bottom 2 squares
+          // therefore that permutation must fill those squares
+          // check permutations to see which ones reach certain squares
+        }
+      }
+    }
   }
 }
