@@ -3,10 +3,9 @@ package home.sj;
 //import java.awt.Color;
 import java.util.ArrayList;
 
-
 public class Main{
   public static void main(String[] args) {
-Square[][] arr = new Square[15][15];
+    Square[][] arr = new Square[15][15];
     
     arr[0][0] = new Square(5, null);
     arr[0][9] = new Square(5, null);
@@ -85,7 +84,9 @@ Square[][] arr = new Square[15][15];
     
     arr[14][12] = new Square(1, null);
     arr[14][13] = new Square(1, null);
-/*
+    
+    
+/*    
     Square[][] arr = new Square[6][4];
     arr[0][0] = null;
     arr[0][1] = new Square(1, null);
@@ -111,7 +112,8 @@ Square[][] arr = new Square[15][15];
     arr[5][1] = null;
     arr[5][2] = null;
     arr[5][3] = null;
-*/
+*/    
+    
     for (int row = 0; row < arr.length; row++) {
       for (int col = 0; col < arr[0].length; col++) {
         if (arr[row][col] == null) {
@@ -144,7 +146,6 @@ Square[][] arr = new Square[15][15];
                   arr2.add(new Permutations(j, k, height, width));
                   arr[row][col] = new Square(arr[row][col].getNumber(), arr2);
                 }
-
                 arr3.add(new Permutations(j, k, height, width));
               }
             }
@@ -154,7 +155,7 @@ Square[][] arr = new Square[15][15];
       }
     }
     
-    for (int x = 0; x < 20; x++) {
+    for (int x = 0; x < 90; x++) {
       boolean isClue = false;
       for (int row = 0; row < arr.length; row++) {
         for (int col = 0; col < arr[0].length; col++) {
@@ -225,14 +226,36 @@ Square[][] arr = new Square[15][15];
         }
       }
     }
-    for (int row = 0; row < arr.length; row++) {
-      for (int col = 0; col < arr[0].length; col++) {
-        if (arr[row][col] != null && arr[row][col].getNumber() > 0) {
-          // ex. the 6 at the bottom is the only number that can reach the bottom 2 squares
-          // therefore that permutation must fill those squares
-          // check permutations to see which ones reach certain squares
-        }
-      }
-    }
   }
 }
+
+
+
+/*
+ * int count = 0;
+ * 
+ * for (int row = 0; row < arr.length; row++) {
+ *   for (int col = 0; col < arr[0].length; col++) {
+ *     if (arr[row][col] == null) {
+ *       for (int r = 0; r < arr.length; r++) {
+ *         for (int c = 0; c < arr[0].length; c++) {
+ *           int h = arr[r][c].getHeight();
+ *           int w = arr[r][c].getWidth();
+ *           int vo = arr[r][c].getVO();
+ *           int ho = arr[r][c].getHO();
+ *           if (arr[r][c] != null && arr[r][c].getNumber() > 0) {
+ *             if (arr[r][c].getArrayList().size() > 1) {
+ *               if (((r - h + 1 + vo) >= row  || (r + vo) <= row) && ((c - w + ho) >= col || (c + ho) <= col)) {
+ *                 count++;
+ *               }
+ *             }
+ *           }
+ *         }
+ *       }
+ *       if(count == 1) {
+ *         do smth
+ *       }
+ *     }
+ *   }
+ * }
+ */
