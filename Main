@@ -253,6 +253,7 @@ public class Main{
 
 /*
  * int count = 0;
+ * ArrayList<Squares> array;
  * 
  * for (int row = 0; row < arr.length; row++) {
  *   for (int col = 0; col < arr[0].length; col++) {
@@ -265,8 +266,9 @@ public class Main{
  *           int ho = arr[r][c].getHO();
  *           if (arr[r][c] != null && arr[r][c].getNumber() > 0) {
  *             if (arr[r][c].getArrayList().size() > 1) {
- *               if (((r - h + 1 + vo) >= row  || (r + vo) <= row) && ((c - w + ho) >= col || (c + ho) <= col)) {
+ *               if (((r - h + 1 + vo) <= row  || (r + vo) >= row) && ((c - w + ho) <= col || (c + ho) >= col)) {
  *                 count++;
+ *                 array.add(arr[r][c]);
  *               }
  *             }
  *           }
