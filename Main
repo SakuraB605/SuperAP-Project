@@ -266,18 +266,70 @@ public class Main{
  *           int ho = arr[r][c].getHO();
  *           if (arr[r][c] != null && arr[r][c].getNumber() > 0) {
  *             if (arr[r][c].getArrayList().size() > 1) {
- *               if (((r - h + 1 + vo) <= row  || (r + vo) >= row) && ((c - w + ho) <= col || (c + ho) >= col)) {
+ *               if (((r - h + 1 + vo) <= row  || (r + vo) >= row) || ((c - w + ho) <= col || (c + ho) >= col)) {
  *                 count++;
  *                 array.add(arr[r][c]);
  *               }
  *             }
  *           }
+ *           
+ *           if(count == 1) {
+ *             ArrayList<Permutations> arr = array.getArraylist();
+ *             for (int i = 0; i < array.size(); i++) {
+ *               int h = arr.get(i).getHeight();
+ *               int w = arr.get(i).getWidth();
+ *               int vo = arr.get(i).getVO();
+ *               int ho = arr.get(i).getHO();
+ *               if (((r - h + 1 + vo) <= row  || (r + vo) >= row) || ((c - w + 1 + ho) <= col || (c + ho) >= col)) {
+ *                 Permutation perm = new Permutations(vo , ho, h, w)
+ *                 arr[row][col] = new Square(arr[row][col].getNumber(), perm);
+ *               }
+ *             } 
+ *           }
  *         }
- *       }
- *       if(count == 1) {
- *         do smth
- *       }
+ *       } 
  *     }
  *   }
  * }
+ */
+/*
+ * int count = 0;
+ *    ArrayList<Square> array_0 = new ArrayList<>();
+ *    
+ *    for (int row = 0; row < arr.length; row++) {
+ *      for (int col = 0; col < arr[0].length; col++) {
+ *        if (arr[row][col] == null) {
+ *          for (int r = 0; r < arr.length; r++) {
+ *            for (int c = 0; c < arr[0].length; c++) {
+ *              int h = arr[r][c].getHeight();
+ *              int w = arr[r][c].getWidth();
+ *              int vo = arr[r][c].getVO();
+ *              int ho = arr[r][c].getHO();
+ *              if (arr[r][c] != null && arr[r][c].getNumber() > 0) {
+ *                if (arr[r][c].getArrayList().size() > 1) {
+ *                  if (((r - h + 1 + vo) <= row  || (r + vo) >= row) || ((c - w + ho) <= col || (c + ho) >= col)) {
+ *                    count++;
+ *                    array.add(arr[r][c]);
+ *                  }
+ *                }
+ *              }
+ *              
+ *              if(count == 1) {
+ *                ArrayList<???> array_1 = array_0.getArraylist();
+ *                for (int i = 0; i < array.size(); i++) {
+ *                  int ht = array_1.get(i).getHeight();
+ *                  int wd = array_1.get(i).getWidth();
+ *                  int vO = array_1.get(i).getVO();
+ *                  int hO = array_1.get(i).getHO();
+ *                  if (((r - ht + 1 + vO) <= row  || (r + vO) >= row) || ((c - wd + 1 + hO) <= col || (c + hO) >= col)) {
+ *                    ArrayList<Permutations> perm = ;
+ *                    arr[row][col] = new Square(arr[row][col].getNumber(), perm);
+ *                  }
+ *                } 
+ *              }
+ *            }
+ *          } 
+ *        }
+ *      }
+ *    } 
  */
