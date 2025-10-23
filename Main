@@ -257,41 +257,37 @@ public class Main{
 
 /*
  * int count = 0;
- * ArrayList<Squares> array;
+ * ArrayList<Squares> possible;
  * 
  * for (int row = 0; row < arr.length; row++) {
  *   for (int col = 0; col < arr[0].length; col++) {
  *     if (arr[row][col] == null) {
+ *       ArrayList<Square> possible = new ArrayList<>();
  *       for (int r = 0; r < arr.length; r++) {
  *         for (int c = 0; c < arr[0].length; c++) {
- *           int h = arr[r][c].getHeight();
- *           int w = arr[r][c].getWidth();
- *           int vo = arr[r][c].getVO();
- *           int ho = arr[r][c].getHO();
+ *           ArrayList<Permutations> perms = arr[r][c].getArrayList();
  *           if (arr[r][c] != null && arr[r][c].getNumber() > 0) {
- *             if (arr[r][c].getArrayList().size() > 1) {
- *               if (((r - h + 1 + vo) <= row  || (r + vo) >= row) || ((c - w + ho) <= col || (c + ho) >= col)) {
- *                 count++;
- *                 array.add(arr[r][c]);
+ *             for (int i = 0; i < perms.size(); perms++) {
+ *               int h = perms.get(i).getHeight();
+ *               int w = perms.get(i).getWidth();
+ *               int vo = perms.get(i).getVO();
+ *               int ho = perms.get(i).getHO();
+ *               if (arr[r][c].getArrayList().size() > 1) {
+ *                 if (((r - h + 1 + vo) <= row  && (r + vo) >= row) && ((c - w + ho) <= col && (c + ho) >= col)) {
+ *                   //count++;
+ *                   possible.add(arr[r][c]);
+ *                 }
  *               }
  *             }
  *           }
- *           
- *           if(count == 1) {
- *             ArrayList<Permutations> arr = array.getArraylist();
- *             for (int i = 0; i < array.size(); i++) {
- *               int h = arr.get(i).getHeight();
- *               int w = arr.get(i).getWidth();
- *               int vo = arr.get(i).getVO();
- *               int ho = arr.get(i).getHO();
- *               if (((r - h + 1 + vo) <= row  || (r + vo) >= row) || ((c - w + 1 + ho) <= col || (c + ho) >= col)) {
- *                 Permutation perm = new Permutations(vo , ho, h, w)
- *                 arr[row][col] = new Square(arr[row][col].getNumber(), perm);
- *               }
- *             } 
- *           }
  *         }
  *       } 
+ *       if(possible.size() == 1) {
+ *          Square ans = possible.get(0);
+            ArrayList<Permutations> perms = ans.getArrayList();
+            ArrayList<Permutations> filtered = new ArrayList<>();
+            
+ *       }
  *     }
  *   }
  * }
