@@ -54,8 +54,15 @@ public class Main extends JPanel {
     initializePuzzle();
     printPuzzle();
     permLists();
-//while (){
-//
+// boolean solved = true;
+//while (!solved){
+//  for (int r = 0; r < arr.length; r++) {
+//    for (int c = 0; c < arr[0].length; c++) {
+//      if(arr[r][c].isLocked() != true) {
+//        solved = false;
+//      }
+//    }
+//  }
 //}
     for (int x = 0; x < 20; x++) {
       validPerm();
