@@ -13,7 +13,7 @@ public class Square {
     this.color = color;
   }
 */
-  Square(int number, ArrayList<Permutations> array){
+  Square(int number, ArrayList<Permutations> array, Color color){
     arr = new ArrayList<Permutations>();
     num = number;
     if (array != null) {      
@@ -21,8 +21,9 @@ public class Square {
         arr.add(array.get(i));
       }
     }
+    this.color = color;
   }
-  Square(int number, ArrayList<Permutations> array, boolean isLocked){
+  Square(int number, ArrayList<Permutations> array, boolean isLocked, Color color){
 	    arr = new ArrayList<Permutations>();
 	    num = number;
 	    if (array != null) {      
@@ -31,15 +32,21 @@ public class Square {
 	      }
 	    }
 	    this.isLocked = isLocked;
+	    this.color = color;
   }
-  Square(boolean isLocked){
+  Square(boolean isLocked, Color color){
     this.isLocked = isLocked;
-  } 
+    this.color = color;
+  }
+  
   public boolean isLocked() {
 	    return isLocked;
   }
   public int getNumber() {
     return num; 
+  }
+  public Color getColor() {
+    return color; 
   }
   public ArrayList<Permutations> getArrayList() {
     return arr;
