@@ -8,7 +8,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 
-public class Grid extends JPanel {
+public class Main extends JPanel {
   static Square[][] arr = new Square[65][100];
 
   public void paintComponent(Graphics g) {
@@ -44,18 +44,18 @@ public class Grid extends JPanel {
     window.setBounds(100, 100, 900, 800);
     window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-    Grid panel = new Grid();
+    Main panel = new Main();
     panel.setBackground(Color.WHITE); // the default color is light gray
     Container c = window.getContentPane();
     c.add(panel);
 
     window.setVisible(true);
-
+    //initPuzzle4();
     initializePuzzle();
     printPuzzle();
     permLists();
 
-    for (int x = 0; x < 900; x++) {
+    for (int x = 0; x < 20; x++) {
       validPerm();
       lockSquares();
       lonelySquares();
@@ -1721,7 +1721,84 @@ public class Grid extends JPanel {
     arr[64][99] = new Square(2, null, new Color(sb));
 
   }
-
+  private static void initPuzzle4() {
+	   arr = new Square[15][15];
+	   arr[0][5] = new Square(5, null, Color.BLUE);
+	   arr[0][7] = new Square(6, null, Color.PINK);
+	   arr[0][10] = new Square(7, null, Color.BLUE);
+	   arr[1][0] = new Square(2, null, Color.BLUE);
+	   arr[1][1] = new Square(2, null, Color.PINK);
+	   arr[1][2] = new Square(4, null, Color.PINK);
+	   arr[1][4] = new Square(2, null, Color.BLACK);
+	   arr[1][8] = new Square(1, null, Color.PINK);
+	   arr[1][10] = new Square(4, null, Color.BLUE);
+	   arr[1][13] = new Square(2, null, Color.LIGHT_GRAY);
+	   arr[2][10] = new Square(3, null, Color.LIGHT_GRAY);
+	   arr[2][13] = new Square(2, null, Color.BLUE);
+	   arr[3][0] = new Square(8, null, Color.BLUE);
+	   arr[3][3] = new Square(3, null, Color.BLUE);
+	   arr[3][4] = new Square(2, null, Color.PINK);
+	   arr[3][5] = new Square(3, null, Color.PINK);
+	   arr[3][6] = new Square(4, null, Color.BLUE);
+	   arr[3][10] = new Square(3, null, Color.BLUE);
+	   arr[3][13] = new Square(4, null, Color.BLUE);
+	   arr[4][3] = new Square(2, null, Color.PINK);
+	   arr[4][4] = new Square(1, null, Color.BLUE);
+	   arr[4][9] = new Square(12, null, Color.BLUE);
+	   arr[4][11] = new Square(1, null, Color.BLACK);
+	   arr[4][13] = new Square(1, null, Color.BLUE);
+	   arr[5][2] = new Square(1, null, Color.BLUE);
+	   arr[5][12] = new Square(2, null, Color.BLACK);
+	   arr[5][13] = new Square(4, null, Color.BLACK);
+	   arr[6][1] = new Square(2, null, Color.LIGHT_GRAY);
+	   arr[6][2] = new Square(2, null, Color.BLUE);
+	   arr[6][7] = new Square(2, null, Color.BLUE);
+	   arr[6][10] = new Square(1, null, Color.PINK);
+	   arr[6][11] = new Square(3, null, Color.PINK);
+	   arr[6][12] = new Square(3, null, Color.PINK);
+	   arr[7][1] = new Square(2, null, Color.BLUE);
+	   arr[7][2] = new Square(2, null, Color.LIGHT_GRAY);
+	   arr[7][6] = new Square(9, null, Color.PINK);
+	   arr[7][10] = new Square(1, null, Color.BLUE);
+	   arr[7][14] = new Square(4, null, Color.BLUE);
+	   arr[8][0] = new Square(4, null, Color.BLUE);
+	   arr[8][7] = new Square(4, null, Color.LIGHT_GRAY);
+	   arr[9][5] = new Square(5, null, Color.BLUE);
+	   arr[9][9] = new Square(8, null, Color.BLUE);
+	   arr[9][14] = new Square(2, null, Color.BLACK);
+	   arr[10][3] = new Square(2, null, Color.BLUE);
+	   arr[10][4] = new Square(1, null, Color.BLUE);
+	   arr[10][6] = new Square(1, null, Color.BLUE);
+	   arr[10][9] = new Square(6, null, Color.BLUE);
+	   arr[10][10] = new Square(4, null, Color.BLACK);
+	   arr[11][5] = new Square(2, null, Color.PINK);
+	   arr[11][6] = new Square(3, null, Color.PINK);
+	   arr[11][13] = new Square(6, null, Color.PINK);
+	   arr[11][14] = new Square(3, null, Color.BLUE);
+	   arr[12][0] = new Square(12, null, Color.BLUE);
+	   arr[12][3] = new Square(2, null, Color.PINK);
+	   arr[12][4] = new Square(2, null, Color.PINK);
+	   arr[12][5] = new Square(1, null, Color.BLUE);
+	   arr[12][8] = new Square(1, null, Color.BLUE);
+	   arr[12][9] = new Square(1, null, Color.PINK);
+	   arr[12][12] = new Square(1, null, Color.BLACK);
+	   arr[13][1] = new Square(2, null, Color.YELLOW);
+	   arr[13][2] = new Square(1, null, Color.PINK);
+	   arr[13][7] = new Square(2, null, Color.PINK);
+	   arr[13][9] = new Square(2, null, Color.BLACK);
+	   arr[13][10] = new Square(4, null, Color.PINK);
+	   arr[13][12] = new Square(1, null, Color.YELLOW);
+	   arr[13][13] = new Square(2, null, Color.PINK);
+	   arr[13][14] = new Square(1, null, Color.YELLOW);
+	   arr[14][0] = new Square(3, null, Color.PINK);
+	   arr[14][3] = new Square(1, null, Color.YELLOW);
+	   arr[14][4] = new Square(4, null, Color.YELLOW);
+	   arr[14][6] = new Square(1, null, Color.YELLOW);
+	   arr[14][7] = new Square(2, null, Color.PINK);
+	   arr[14][10] = new Square(2, null, Color.BLACK);
+	   arr[14][11] = new Square(2, null, Color.YELLOW);
+	   arr[14][13] = new Square(2, null, Color.PINK);
+	 }
   private static void validPerm() {
     boolean isClue = false;
     for (int row = 0; row < arr.length; row++) {
@@ -1813,8 +1890,7 @@ public class Grid extends JPanel {
           }
           if (possible.size() == 1) {
             arr[goalR][goalC] = possible.get(0);
-            row = arr.length;
-            break;
+            lockSquares();
           }
           possible.clear();
           p.clear();
@@ -1826,7 +1902,7 @@ public class Grid extends JPanel {
   private static void lonelySquaresPtTwo() {
     ArrayList<Square> possible = new ArrayList<>();
     ArrayList<Permutations> p = new ArrayList<>();
-    boolean allSame = false;
+    boolean allSame = true;
     int goalR = 0;
     int goalC = 0;
     for (int row = 0; row < arr.length; row++) {
@@ -1853,16 +1929,19 @@ public class Grid extends JPanel {
               }
             }
           }
-          if (possible.size() != 1) {
-            for(int i = 0; i < possible.size() - 2; i++) {
-              if (possible.get(i).getNumber() == possible.get(i + 1).getNumber()) {
-                allSame = true;
+          if (possible.size() > 1) {
+        	int checkNum = possible.get(0).getNumber();
+            for(int i = 0; i < possible.size(); i++) {
+              if (possible.get(i).getNumber() != checkNum) {
+                allSame = false;
+                break;
               }
             }
             if (allSame) {
-              for(int j = 0; j < possible.size(); j++) {
+             /* for(int j = 0; j < possible.size(); j++) {
                 arr[goalR][goalC] = possible.get(j);
               }
+              */
             }
           }
           possible.clear();
