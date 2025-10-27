@@ -54,7 +54,9 @@ public class Main extends JPanel {
     initializePuzzle();
     printPuzzle();
     permLists();
-
+//while (){
+//
+//}
     for (int x = 0; x < 20; x++) {
       validPerm();
       lockSquares();
