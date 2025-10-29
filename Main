@@ -1,4 +1,5 @@
 package home.sj;
+
 import java.awt.Graphics;
 import java.util.ArrayList;
 import java.awt.Color;
@@ -55,13 +56,6 @@ public class Main extends JPanel {
       lonelySquares();
       lonelySquaresPtTwo();
     }
-   /* for (int x = 0; x < 600; x++) {
-      validPerm();
-      lockSquares();
-      lonelySquares();
-      lonelySquaresPtTwo();
-    }
-    */
 
     printFinal();
   }
@@ -1879,13 +1873,11 @@ public class Main extends JPanel {
                   int w = perms.get(i).getWidth();
                   int vo = perms.get(i).getVO();
                   int ho = perms.get(i).getHO();
-                  if (arr[r][c].getArrayList().size() > 1) {
-                    if (((r - h + 1 + vo) <= row && (r + vo) >= row) && ((c - w + 1 + ho) <= col && (c + ho) >= col)) {
-                      p.add(new Permutations(vo, ho, h, w));
-                      goalR = r;
-                      goalC = c;
-                      possible.add(new Square(arr[r][c].getNumber(), p, arr[r][c].getColor()));
-                    }
+                  if (((r - h + 1 + vo) <= row && (r + vo) >= row) && ((c - w + 1 + ho) <= col && (c + ho) >= col)) {
+                    p.add(new Permutations(vo, ho, h, w));
+                    goalR = r;
+                    goalC = c;
+                    possible.add(new Square(arr[r][c].getNumber(), p, arr[r][c].getColor()));
                   }
                 }
               }
@@ -1921,29 +1913,25 @@ public class Main extends JPanel {
                   int w = perms.get(i).getWidth();
                   int vo = perms.get(i).getVO();
                   int ho = perms.get(i).getHO();
-//                  if (arr[r][c].getArrayList().size() > 1) {
-                    if (((r - h + 1 + vo) <= row && (r + vo) >= row) && ((c - w + 1 + ho) <= col && (c + ho) >= col)) {
-                      if(allSame) {
-                        System.out.println("*****************");
-                        p.add(new Permutations(vo, ho, h, w));
-                        if (p.size() == 1) {                          
-                          goalR = r;
-                          goalC = c;
-                        }
-                        possible.add(new Square(arr[r][c].getNumber(), p, arr[r][c].getColor()));
+                  if (((r - h + 1 + vo) <= row && (r + vo) >= row) && ((c - w + 1 + ho) <= col && (c + ho) >= col)) {
+                    if(allSame) {
+                      p.add(new Permutations(vo, ho, h, w));
+                      if (p.size() == 1) {                          
+                        goalR = r;
+                        goalC = c;
                       }
-                      if(r != goalR || c != goalC) {
-                        allSame = false;
-                      }
+                      possible.add(new Square(arr[r][c].getNumber(), p, arr[r][c].getColor()));
+                    }
+                    if(r != goalR || c != goalC) {
+                      allSame = false;
                     }
                   }
                 }
               }
             }
-//          }
+          }
           if (allSame && possible.size() > 1) {
               arr[goalR][goalC] = possible.get(possible.size() - 1);
-//              lockSquares();
           }
           possible.clear();
           p.clear();
